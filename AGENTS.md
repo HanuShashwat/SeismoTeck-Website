@@ -821,7 +821,7 @@ npm start
 6. **All components must use CSS Modules** (`.module.css` files), NOT inline styles.
 7. **Use Next.js App Router** conventions. Server components by default; add `'use client'` only where React hooks or browser APIs are needed (forms, IntersectionObserver, etc.).
 8. **The website is purely static/informational.** No database, no API calls, no authentication, no dynamic data fetching.
-9. **Copy the `assets/` folder contents into `public/assets/` at the start** before building pages. The original `assets/` folder at root should remain untouched.
+9. **Copy the `assets/` folder contents into `public/assets/` at the start** before building pages. The original `assets/` folder at root should remain unedited and untouched.
 10. **Verify that `npm run build` succeeds** after implementing all pages.
 
 ---
