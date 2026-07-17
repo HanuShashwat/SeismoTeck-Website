@@ -1,0 +1,3 @@
+All the images are present in the Assets folder by the name of image1 to image22. Along with that you'll find the Markdown file of image description that has described each image in detail of what they are. Based on the provided information and relevant sample websites that are provided below, make a simple, elegant, and modern website for this company. 
+
+Sample website: 1. https://www.nasa.gov/ and 2. https://mausam.imd.gov.in/
