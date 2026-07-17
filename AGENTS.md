@@ -56,7 +56,7 @@ seismoteck_website/
 │       ├── img1.jpeg              # Hero: Earth from space, India highlighted
 │       ├── img2.jpeg              # Hero: Earth with tectonic plates + dashboard
 │       ├── img3.jpeg              # Product: IoT sensor in field
-│       ├── img4.jpg               # News: 2026 Mindanao earthquake article
+│       ├── img4.jpeg              # News: 2026 Mindanao earthquake article
 │       ├── img5.jpg               # Dashboard: Multi-location earthquake data
 │       ├── img6.jpg               # Dashboard: Philippine seismic zone monitoring
 │       ├── img7.jpg               # News: Japan & Venezuela earthquakes
@@ -332,7 +332,7 @@ The home page has **7 sections**, rendered in this exact order:
   - **Title:** `"Times of India: Teacher's Earthquake Forecast Comes True"`
   - **Description:** `"'Motihari school teacher Umesh Prasad Verma predicted an earthquake of magnitude above six would hit Nepal within 48 hours' — and it came true."`
 - **Item 2:**
-  - **Image:** `img4.jpg` (2026 Mindanao earthquake Wikipedia)
+  - **Image:** `img4.jpeg` (2026 Mindanao earthquake Wikipedia)
   - **Title:** `"2026 Mindanao Earthquake — Predicted by SAHAS Alert"`
   - **Description:** `"The magnitude 6.9 earthquake in Glan, Sarangani was successfully predicted using SeismoTeck's multi-parametric monitoring system."`
 
@@ -442,7 +442,7 @@ The home page has **7 sections**, rendered in this exact order:
 2. **Case Study Cards** — Grid of detailed case study entries:
 
    **Case Study 1: 2026 Mindanao Earthquake**
-   - **Image:** `img4.jpg`
+   - **Image:** `img4.jpeg`
    - **Heading:** `"2026 Mindanao Earthquake — Glan, Sarangani"`
    - **Details:** Successfully predicted by SAHAS Alert. Magnitude and location matched predictions from multi-parametric data analysis.
 
@@ -496,7 +496,7 @@ The home page has **7 sections**, rendered in this exact order:
 3. **News Articles Grid**
    - Use `<NewsCard />` components in a 2-column grid.
    - **Article 1:** `img12.jpg` — Times of India article. Title: "Times of India: Teacher's Earthquake Forecast Comes True". Summary from the article text.
-   - **Article 2:** `img4.jpg` — Wikipedia article on 2026 Mindanao Earthquake. Title: "2026 Mindanao Earthquake Documentation".
+   - **Article 2:** `img4.jpeg` — Wikipedia article on 2026 Mindanao Earthquake. Title: "2026 Mindanao Earthquake Documentation".
    - **Article 3:** `img7.jpg` — Japan/Venezuela earthquake coverage. Title: "Dual Earthquake Events: Japan & Venezuela Monitoring".
 
 4. **Earthquake Warning Posters**
@@ -697,7 +697,7 @@ The home page has **7 sections**, rendered in this exact order:
 | `img1.jpeg` | Home Hero, About page header bg | Earth from space, India highlighted — hero background |
 | `img2.jpeg` | Home Innovations grid, Technology page | Earth + tectonic plates + dashboard — seismic imaging |
 | `img3.jpeg` | Home Innovations grid, Technology page | IoT sensor field deployment — product showcase |
-| `img4.jpg` | Home Media preview, Predictions page, Media page | Wikipedia: 2026 Mindanao earthquake article |
+| `img4.jpeg` | Home Media preview, Predictions page, Media page | Wikipedia: 2026 Mindanao earthquake article |
 | `img5.jpg` | Home Innovations grid, Technology page | Multi-location earthquake dashboard |
 | `img6.jpg` | Home Featured Prediction, Predictions page | Philippine seismic zone dashboard |
 | `img7.jpg` | Predictions page, Media page | Japan (Noda) + Venezuela earthquakes |
@@ -817,7 +817,7 @@ npm start
 2. **DO NOT use any placeholder images.** All images are provided in `assets/` — copy them to `public/assets/` and use them via Next.js `<Image>` component with path `/assets/img1.jpeg` etc.
 3. **DO NOT fabricate or hallucinate content.** Use ONLY the text, descriptions, and claims provided in this file and `assets/img_description.md`.
 4. **Frame all earthquake prediction claims carefully.** Use phrases like "according to SeismoTeck's research", "the company reports", "the system is designed to". NEVER present unverified claims as established scientific fact.
-5. **Use the exact image filenames.** Note the mixed extensions: `img1.jpeg`, `img2.jpeg`, `img3.jpeg` are `.jpeg`; `img4.jpg` onward are `.jpg`. Use the correct extension for each.
+5. **Use the exact image filenames.** Note the mixed extensions: `img1.jpeg`, `img2.jpeg`, `img3.jpeg`, and `img4.jpeg` are `.jpeg`; `img5.jpg` onward are `.jpg`. Use the correct extension for each.
 6. **All components must use CSS Modules** (`.module.css` files), NOT inline styles.
 7. **Use Next.js App Router** conventions. Server components by default; add `'use client'` only where React hooks or browser APIs are needed (forms, IntersectionObserver, etc.).
 8. **The website is purely static/informational.** No database, no API calls, no authentication, no dynamic data fetching.
