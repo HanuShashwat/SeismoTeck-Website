@@ -1,0 +1,57 @@
+import type { Metadata } from "next";
+import { Inter, Outfit } from "next/font/google";
+import Navbar from "@/components/Navbar/Navbar";
+import Footer from "@/components/Footer/Footer";
+import "./globals.css";
+
+const inter = Inter({
+  variable: "--font-inter",
+  subsets: ["latin"],
+});
+
+const outfit = Outfit({
+  variable: "--font-outfit",
+  subsets: ["latin"],
+});
+
+export const metadata: Metadata = {
+  title: {
+    default: "SeismoTeck — Advanced Earthquake Prediction & Seismic Research",
+    template: "%s | SeismoTeck",
+  },
+  description:
+    "SASVC SeismoTech Software India Pvt. Ltd. — Pioneering earthquake prediction through advanced multi-parametric monitoring, IoT sensors, and satellite-based seismic analysis.",
+  keywords: [
+    "earthquake prediction",
+    "seismic monitoring",
+    "IoT sensors",
+    "seismology",
+    "tectonic plates",
+    "SAHAS Alert",
+    "SeismoTeck",
+    "India",
+  ],
+  openGraph: {
+    title: "SeismoTeck — Advanced Earthquake Prediction",
+    description:
+      "Pioneering earthquake prediction through advanced seismic research and IoT monitoring.",
+    type: "website",
+    locale: "en_IN",
+  },
+};
+
+export default function RootLayout({
+  children,
+}: Readonly<{
+  children: React.ReactNode;
+}>) {
+  return (
+    <html lang="en" className={`${inter.variable} ${outfit.variable}`}>
+      <body>
+        <Navbar />
+        <main>{children}</main>
+        <Footer />
+      </body>
+    </html>
+  );
+}
