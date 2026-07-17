@@ -1,0 +1,102 @@
+.page {
+  display: flex;
+  flex-direction: column;
+}
+
+.section {
+  padding: var(--space-section) 0;
+}
+
+.bgSecondary {
+  background-color: var(--color-bg-secondary);
+}
+
+.container {
+  max-width: var(--max-width);
+  margin: 0 auto;
+  padding: 0 var(--space-md);
+}
+
+/* Header Banner */
+.headerBanner {
+  background: var(--gradient-hero);
+  padding: var(--space-3xl) 0;
+  text-align: center;
+  border-bottom: 1px solid var(--color-border);
+}
+
+.bannerTitle {
+  font-size: var(--fs-h1);
+  color: var(--color-text-primary);
+  margin-bottom: var(--space-xs);
+  text-shadow: var(--glow-cyan);
+}
+
+.bannerSubtext {
+  font-size: var(--fs-body-lg);
+  color: var(--color-text-secondary);
+  max-width: 600px;
+  margin: 0 auto;
+}
+
+/* Team Grids */
+.teamGrid2 {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: var(--space-2xl);
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+.teamGrid3 {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: var(--space-xl);
+  max-width: var(--max-width-narrow);
+  margin: 0 auto;
+}
+
+/* Group Photos */
+.photoGrid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: var(--space-xl);
+}
+
+.photoWrapper {
+  position: relative;
+  aspect-ratio: 4 / 3;
+  border-radius: var(--border-radius-md);
+  overflow: hidden;
+  border: 1px solid var(--color-border);
+  box-shadow: var(--glow-cyan);
+}
+
+.image {
+  object-fit: cover;
+}
+
+.caption {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background: rgba(10, 14, 23, 0.85);
+  backdrop-filter: blur(4px);
+  padding: var(--space-sm);
+  text-align: center;
+  color: var(--color-text-primary);
+  font-size: var(--fs-small);
+  font-weight: 500;
+  border-top: 1px solid var(--color-border);
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .teamGrid2,
+  .teamGrid3,
+  .photoGrid {
+    grid-template-columns: 1fr;
+    gap: var(--space-xl);
+  }
+}

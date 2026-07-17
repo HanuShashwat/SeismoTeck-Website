@@ -1,0 +1,28 @@
+.revealWrapper {
+  opacity: 0;
+  transition-property: opacity, transform;
+  transition-duration: 800ms;
+  transition-timing-function: cubic-bezier(0.2, 0.8, 0.2, 1);
+  will-change: opacity, transform;
+}
+
+.visible {
+  opacity: 1;
+  transform: translate(0, 0) !important;
+}
+
+.translateUp {
+  transform: translateY(30px);
+}
+
+.translateDown {
+  transform: translateY(-30px);
+}
+
+.translateLeft {
+  transform: translateX(30px);
+}
+
+.translateRight {
+  transform: translateX(-30px);
+}

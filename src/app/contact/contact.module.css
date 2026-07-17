@@ -1,0 +1,133 @@
+.page {
+  display: flex;
+  flex-direction: column;
+}
+
+.section {
+  padding: var(--space-section) 0;
+}
+
+.container {
+  max-width: var(--max-width);
+  margin: 0 auto;
+  padding: 0 var(--space-md);
+}
+
+/* Header Banner */
+.headerBanner {
+  background: var(--gradient-hero);
+  padding: var(--space-3xl) 0;
+  text-align: center;
+  border-bottom: 1px solid var(--color-border);
+}
+
+.bannerTitle {
+  font-size: var(--fs-h1);
+  color: var(--color-text-primary);
+  margin-bottom: var(--space-xs);
+  text-shadow: var(--glow-cyan);
+}
+
+.bannerSubtext {
+  font-size: var(--fs-body-lg);
+  color: var(--color-text-secondary);
+  max-width: 600px;
+  margin: 0 auto;
+}
+
+/* Contact Grid */
+.contactGrid {
+  display: grid;
+  grid-template-columns: 1fr 1.2fr;
+  gap: var(--space-3xl);
+  align-items: flex-start;
+}
+
+.contactInfo {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-xl);
+}
+
+.introText {
+  font-size: var(--fs-body-lg);
+  color: var(--color-text-secondary);
+  line-height: 1.6;
+}
+
+.infoCards {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-lg);
+}
+
+.infoCard {
+  display: flex;
+  align-items: flex-start;
+  gap: var(--space-md);
+}
+
+.iconWrapper {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 48px;
+  height: 48px;
+  border-radius: 50%;
+  background-color: rgba(0, 229, 255, 0.1);
+  color: var(--color-accent-primary);
+  font-size: 20px;
+  border: 1px solid var(--color-border-glow);
+  flex-shrink: 0;
+}
+
+.infoTitle {
+  font-size: var(--fs-h4);
+  color: var(--color-text-primary);
+  margin-bottom: var(--space-xs);
+}
+
+.infoText {
+  color: var(--color-text-secondary);
+  line-height: 1.5;
+}
+
+.infoText a {
+  color: var(--color-text-secondary);
+  transition: color var(--transition-fast);
+}
+
+.infoText a:hover {
+  color: var(--color-accent-primary);
+}
+
+.businessHours {
+  padding-top: var(--space-lg);
+  border-top: 1px dashed var(--color-border);
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-xs);
+}
+
+.formWrapper {
+  position: relative;
+}
+
+.formWrapper::before {
+  content: "";
+  position: absolute;
+  inset: -2px;
+  background: var(--gradient-accent);
+  border-radius: calc(var(--border-radius-lg) + 2px);
+  z-index: -1;
+  opacity: 0.3;
+  filter: blur(8px);
+}
+
+/* Responsive */
+@media (max-width: 900px) {
+  .contactGrid {
+    grid-template-columns: 1fr;
+    gap: var(--space-3xl);
+  }
+}
