@@ -126,9 +126,12 @@ seismoteck_website/
 │   │   ├── NewsTicker/
 │   │   │   ├── NewsTicker.tsx
 │   │   │   └── NewsTicker.module.css
-│   │   └── ContactForm/
-│   │       ├── ContactForm.tsx
-│   │       └── ContactForm.module.css
+│   │   ├── ContactForm/
+│   │   │   ├── ContactForm.tsx
+│   │   │   └── ContactForm.module.css
+│   │   └── VideoEmbed/
+│   │       ├── VideoEmbed.tsx
+│   │       └── VideoEmbed.module.css
 │   └── utils/
 │       └── constants.ts           # Site-wide constants (company info, nav links, etc.)
 ├── AGENTS.md
@@ -317,7 +320,13 @@ The home page has **7 sections**, rendered in this exact order:
 - **Animation:** Numbers should animate (count up) when the section scrolls into view using `IntersectionObserver`. Use a simple counter effect with `requestAnimationFrame`.
 
 #### Section 6: Media & Recognition Preview
-- **Layout:** Section heading + 2-column grid showing 2 featured media items, plus a "View All Media →" link to `/media`.
+- **Layout:** Section heading + featured video + 2-column grid showing 2 featured media items, plus a "View All Media →" link to `/media`.
+- **Featured Video (above the grid):**
+  - **Component:** `<VideoEmbed />`
+  - **YouTube URL:** `https://www.youtube.com/embed/Uc38C2OJFyg`
+  - **Title:** `"HTV News: Earthquake Prediction Analysis by Umesh Prasad Verma"`
+  - **Description below video:** `"A news report covering Umesh Prasad Verma's earthquake prediction methodology, based on 20 years of research. The report discusses forecasts for the India-Pakistan border region and other seismically active zones."`
+  - **Layout:** Full-width 16:9 responsive embed, centered within `var(--max-width)` container, with bottom margin before the card grid.
 - **Item 1:**
   - **Image:** `img12.jpg` (Times of India article)
   - **Title:** `"Times of India: Teacher's Earthquake Forecast Comes True"`
@@ -471,16 +480,29 @@ The home page has **7 sections**, rendered in this exact order:
    - Heading: `"Media & Recognition"`
    - Subtext: `"Coverage, partnerships, and milestones"`
 
-2. **News Articles Grid**
+2. **Featured Video Section**
+   - **Component:** `<VideoEmbed />`
+   - **Heading:** `"Featured: HTV News Coverage"`
+   - **YouTube URL:** `https://www.youtube.com/embed/Uc38C2OJFyg`
+   - **Embed ID:** `Uc38C2OJFyg` (extract from the YouTube URL `https://youtu.be/Uc38C2OJFyg`)
+   - **Layout:** Full-width responsive 16:9 iframe embed, centered within `var(--max-width-narrow)` container (900px).
+   - **Title below video:** `"HTV News: Earthquake Prediction Analysis by Umesh Prasad Verma"`
+   - **Description below video (2 paragraphs):**
+     - Paragraph 1: `"This news report covers the earthquake prediction work of Umesh Prasad Verma, who is described as having researched earthquake prediction for over 20 years. The report discusses his forecasts for seismically active regions, including the India–Pakistan border, the Afghanistan–Iran border, and the Afghanistan–Pakistan border, with predicted magnitudes ranging from 5.0 to 6.5."`
+     - Paragraph 2: `"According to Verma, his prediction method is based on proprietary data analysis. The report notes that earthquake prediction remains an unsolved scientific challenge, and these forecasts represent Verma's independent research claims."`
+   - **Disclaimer (styled in muted text, smaller font):** `"Note: The predictions discussed in this video represent claims made by the researcher. They are not independently verified by recognized seismological institutions or government agencies."`
+   - **Styling:** Dark card background wrapping the video + text. Rounded corners. Subtle cyan glow border on the video container.
+
+3. **News Articles Grid**
    - Use `<NewsCard />` components in a 2-column grid.
    - **Article 1:** `img12.jpg` — Times of India article. Title: "Times of India: Teacher's Earthquake Forecast Comes True". Summary from the article text.
    - **Article 2:** `img4.jpg` — Wikipedia article on 2026 Mindanao Earthquake. Title: "2026 Mindanao Earthquake Documentation".
    - **Article 3:** `img7.jpg` — Japan/Venezuela earthquake coverage. Title: "Dual Earthquake Events: Japan & Venezuela Monitoring".
 
-3. **Earthquake Warning Posters**
+4. **Earthquake Warning Posters**
    - Grid showing `img9.jpg` and `img15.jpg` with full descriptions (same as in predictions page).
 
-4. **Recognition & Government Association Gallery**
+5. **Recognition & Government Association Gallery**
    - Display in a gallery grid:
      - `img8.jpg` — Founder with senior IPS officer
      - `img11.jpg` — Founder with influential person
@@ -642,6 +664,29 @@ The home page has **7 sections**, rendered in this exact order:
 - Controlled form with React state.
 - Input styling: Dark background, subtle border, cyan focus glow, placeholder text in muted color.
 - Submit button matches primary CTA style.
+
+### 6.13 `<VideoEmbed />`
+- **Props:** `youtubeId: string`, `title: string`, `description?: string`, `disclaimer?: string`
+- Client component (`'use client'`) — needed for lazy loading logic.
+- Renders a responsive 16:9 YouTube iframe embed.
+- **Implementation details:**
+  - Use an `<iframe>` with `src="https://www.youtube.com/embed/{youtubeId}"` and attributes: `frameBorder="0"`, `allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"`, `allowFullScreen`, `loading="lazy"`, `title={title}`.
+  - Wrap the iframe in a container div with `position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden;` (standard 16:9 responsive embed technique). The iframe itself should have `position: absolute; top: 0; left: 0; width: 100%; height: 100%;`.
+  - Below the iframe, render the `title` as a heading (`<h3>`) and `description` as a `<p>` in muted text.
+  - If `disclaimer` is provided, render it as a small italic paragraph in `var(--color-text-muted)` with a top border separator.
+- **Styling (VideoEmbed.module.css):**
+  - Outer card: `background: var(--gradient-card)`, `border: 1px solid var(--color-border)`, `border-radius: var(--border-radius-lg)`, `overflow: hidden`, `padding: 0 0 var(--space-lg) 0`.
+  - Video container: cyan glow box-shadow on hover (`var(--glow-cyan)`).
+  - Title text: `font-family: var(--font-heading)`, `font-size: var(--fs-h3)`, padding inside card.
+  - Description: `color: var(--color-text-secondary)`, padding inside card.
+
+### YouTube Video Reference
+- **URL:** `https://youtu.be/Uc38C2OJFyg`
+- **Embed URL:** `https://www.youtube.com/embed/Uc38C2OJFyg`
+- **Embed ID:** `Uc38C2OJFyg`
+- **Video Title:** HTV News coverage of earthquake prediction by Umesh Prasad Verma
+- **Video Content Summary:** A news report discussing Umesh Prasad Verma's earthquake prediction work, covering forecasts for the India–Pakistan border (magnitude up to 6.5), Afghanistan–Iran border, Afghanistan–Pakistan border (magnitude 5.0+), and Indonesian/Indian Ocean regions. Claims approximately 75% accuracy over 20 years of research. The report acknowledges earthquake prediction remains scientifically unresolved.
+- **Used on pages:** Home (Section 6: Media Preview), Media page (Section 2: Featured Video)
 
 ---
 
