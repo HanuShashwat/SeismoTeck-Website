@@ -2,9 +2,9 @@ import React from "react";
 import styles from "./NewsTicker.module.css";
 
 const NEWS_ITEMS = [
-  "ALERT: 2026 Mindanao Earthquake (Magnitude 6.9) — Successfully predicted by SAHAS Alert System",
+  "ALERT: 2026 Mindanao Earthquake (Magnitude 6.9) — Successfully forecasted by SAHAS Alert System",
   "SeismoTeck's IoT sensor network now deployed across 15+ monitoring stations in Bihar and Uttarakhand",
-  "Founder UP Verma's earthquake prediction for Nepal (Magnitude 6+) confirmed within 48 hours — Times of India",
+  "Founder UP Verma's earthquake forecast for Nepal (Magnitude 6+) confirmed within 48 hours — Times of India",
   "New partnership with Bihar State Disaster Management Authority (BSDMA) for early warning systems",
 ];
 

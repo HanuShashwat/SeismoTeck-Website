@@ -20,7 +20,7 @@ export default function ContactPage() {
           <ScrollReveal>
             <h1 className={styles.bannerTitle}>Contact Us</h1>
             <p className={styles.bannerSubtext}>
-              Partner with us in the pursuit of earthquake prediction and disaster preparedness.
+              Partner with us in the pursuit of earthquake forecast and disaster preparedness.
             </p>
           </ScrollReveal>
         </div>

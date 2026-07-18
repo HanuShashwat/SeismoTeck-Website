@@ -20,7 +20,7 @@ export default function TeamPage() {
           <ScrollReveal>
             <h1 className={styles.bannerTitle}>Meet the Team</h1>
             <p className={styles.bannerSubtext}>
-              The minds behind the next generation of earthquake prediction technology.
+              The minds behind the next generation of earthquake forecast technology.
             </p>
           </ScrollReveal>
         </div>

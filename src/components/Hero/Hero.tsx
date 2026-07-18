@@ -22,7 +22,7 @@ export default function Hero() {
         <div className={styles.textContent}>
           <span className={styles.preHeading}>{COMPANY_INFO.name}</span>
           <h1 className={styles.title}>
-            Pioneering Earthquake Prediction Through Advanced Seismic Research
+            Pioneering Earthquake Forecast Through Advanced Seismic Research
           </h1>
           <p className={styles.subtext}>
             Leveraging IoT sensors, satellite data, and multi-parametric analysis to forecast seismic activity with unprecedented accuracy.
@@ -31,8 +31,8 @@ export default function Hero() {
             <Link href="/technology" className={`${styles.btn} ${styles.btnPrimary}`}>
               Explore Our Technology
             </Link>
-            <Link href="/predictions" className={`${styles.btn} ${styles.btnSecondary}`}>
-              View Predictions
+            <Link href="/forecasts" className={`${styles.btn} ${styles.btnSecondary}`}>
+              View Forecasts
             </Link>
           </div>
         </div>

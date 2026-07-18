@@ -3,7 +3,7 @@
 > **Company Full Name:** SASVC SeismoTech Software India Private Limited  
 > **Short Name / Brand:** SeismoTeck  
 > **Headquarters:** Patna, Bihar, India  
-> **Industry:** Seismology / Earthquake Prediction / Geophysical Research / IoT-based Monitoring  
+> **Industry:** Seismology / Earthquake Forecast / Geophysical Research / IoT-based Monitoring  
 > **Founder & Lead Researcher:** Umesh Prasad Verma (referred to as "UP Verma Sir")  
 > **Co-Founder & Director:** Mrs. Sweety Verma
 
@@ -11,7 +11,7 @@
 
 ## 1. Project Overview
 
-Build a modern, elegant, and professional **multi-page website** for SeismoTeck — a seismology and earthquake prediction company. The website must convey scientific authority, technological sophistication, and trustworthiness. It is an informational/corporate website (NOT a SaaS dashboard or e-commerce store).
+Build a modern, elegant, and professional **multi-page website** for SeismoTeck — a seismology and earthquake forecast company. The website must convey scientific authority, technological sophistication, and trustworthiness. It is an informational/corporate website (NOT a SaaS dashboard or e-commerce store).
 
 ### Design References (study the layout patterns, NOT copy them)
 1. **NASA.gov** — Dark space-themed hero sections, clean card-grid layouts for news/articles, prominent featured media, bold typography hierarchy, sticky navigation with dropdowns.
@@ -84,8 +84,8 @@ seismoteck_website/
 │   │   │   └── page.tsx           # About Us page
 │   │   ├── technology/
 │   │   │   └── page.tsx           # Technology & Products page
-│   │   ├── predictions/
-│   │   │   └── page.tsx           # Predictions & Case Studies page
+│   │   ├── forecasts/
+│   │   │   └── page.tsx           # Forecasts & Case Studies page
 │   │   ├── media/
 │   │   │   └── page.tsx           # Media & Recognition page
 │   │   ├── team/
@@ -166,7 +166,7 @@ Define these in `src/app/globals.css`:
   --color-accent-secondary: #00bcd4;
   --color-accent-warm: #f59e0b;        /* Amber for warnings/highlights */
   --color-accent-danger: #ef4444;      /* Red for seismic alerts */
-  --color-accent-success: #10b981;     /* Green for verified predictions */
+  --color-accent-success: #10b981;     /* Green for verified forecasts */
 
   --gradient-hero: linear-gradient(135deg, #0a0e17 0%, #0f2027 50%, #0a0e17 100%);
   --gradient-card: linear-gradient(145deg, #1a1f2e, #111827);
@@ -225,14 +225,14 @@ Define these in `src/app/globals.css`:
 ```typescript
 export const metadata: Metadata = {
   title: {
-    default: 'SeismoTeck — Advanced Earthquake Prediction & Seismic Research',
+    default: 'SeismoTeck — Advanced Earthquake Forecast & Seismic Research',
     template: '%s | SeismoTeck'
   },
-  description: 'SASVC SeismoTech Software India Pvt. Ltd. — Pioneering earthquake prediction through advanced multi-parametric monitoring, IoT sensors, and satellite-based seismic analysis.',
-  keywords: ['earthquake prediction', 'seismic monitoring', 'IoT sensors', 'seismology', 'tectonic plates', 'SAHAS Alert', 'SeismoTeck', 'India'],
+  description: 'SASVC SeismoTech Software India Pvt. Ltd. — Pioneering earthquake forecast through advanced multi-parametric monitoring, IoT sensors, and satellite-based seismic analysis.',
+  keywords: ['earthquake forecast', 'seismic monitoring', 'IoT sensors', 'seismology', 'tectonic plates', 'SAHAS Alert', 'SeismoTeck', 'India'],
   openGraph: {
-    title: 'SeismoTeck — Advanced Earthquake Prediction',
-    description: 'Pioneering earthquake prediction through advanced seismic research and IoT monitoring.',
+    title: 'SeismoTeck — Advanced Earthquake Forecast',
+    description: 'Pioneering earthquake forecast through advanced seismic research and IoT monitoring.',
     type: 'website',
     locale: 'en_IN',
   },
@@ -258,11 +258,11 @@ The home page has **7 sections**, rendered in this exact order:
 - **Background:** `img1.jpeg` — Earth from space with India highlighted. Use Next.js `<Image>` with `fill`, `priority`, `quality={90}`, and `object-fit: cover`. Apply a dark semi-transparent overlay gradient on top.
 - **Content overlay:**
   - Pre-heading label: `"SASVC SeismoTech Software India Pvt. Ltd."` — small, uppercase, letter-spaced, in accent cyan color.
-  - Main heading: `"Pioneering Earthquake Prediction Through Advanced Seismic Research"` — Use `var(--fs-display)`, font `Outfit`, weight 700.
+  - Main heading: `"Pioneering Earthquake Forecast Through Advanced Seismic Research"` — Use `var(--fs-display)`, font `Outfit`, weight 700.
   - Subtext (1–2 lines): `"Leveraging IoT sensors, satellite data, and multi-parametric analysis to forecast seismic activity with unprecedented accuracy."` — Use `var(--fs-body-lg)`, color `var(--color-text-secondary)`.
   - Two CTA buttons side by side:
     1. **Primary:** `"Explore Our Technology"` → links to `/technology`. Styled: solid background `var(--color-accent-primary)`, dark text, rounded, hover glow.
-    2. **Secondary:** `"View Predictions"` → links to `/predictions`. Styled: transparent with cyan border, cyan text, hover fill.
+    2. **Secondary:** `"View Forecasts"` → links to `/forecasts`. Styled: transparent with cyan border, cyan text, hover fill.
 - **Height:** Full viewport height (`100vh`), with content vertically centered.
 - **Animation:** Fade-in + slight upward slide for text content on page load (CSS `@keyframes`, not a library).
 
@@ -271,15 +271,15 @@ The home page has **7 sections**, rendered in this exact order:
 - **Design:** Inspired by IMD's marquee bar. A horizontal strip below the hero with scrolling news text.
 - **Background:** `var(--color-bg-secondary)` with top/bottom border in `var(--color-border)`.
 - **Content (hardcoded array of strings):**
-  1. `"ALERT: 2026 Mindanao Earthquake (Magnitude 6.9) — Successfully predicted by SAHAS Alert System"`
+  1. `"ALERT: 2026 Mindanao Earthquake (Magnitude 6.9) — Successfully forecasted by SAHAS Alert System"`
   2. `"SeismoTeck's IoT sensor network now deployed across 15+ monitoring stations in Bihar and Uttarakhand"`
-  3. `"Founder UP Verma's earthquake prediction for Nepal (Magnitude 6+) confirmed within 48 hours — Times of India"`
+  3. `"Founder UP Verma's earthquake forecast for Nepal (Magnitude 6+) confirmed within 48 hours — Times of India"`
   4. `"New partnership with Bihar State Disaster Management Authority (BSDMA) for early warning systems"`
 - **Animation:** CSS `@keyframes` horizontal scroll from right to left, continuous loop. Pause on hover.
 
 #### Section 3: Key Innovations Grid
 - **Layout:** Section heading + 3-column grid of cards.
-- **Section heading text:** `"Our Innovations"` with subtext: `"Advanced technology driving the future of earthquake prediction"`
+- **Section heading text:** `"Our Innovations"` with subtext: `"Advanced technology driving the future of earthquake forecast"`
 - **Card 1:**
   - **Image:** `img2.jpeg` (Earth with tectonic plates and dashboard overlays)
   - **Title:** `"Advanced Seismic Imaging & Plate Tectonic Modeling"`
@@ -294,7 +294,7 @@ The home page has **7 sections**, rendered in this exact order:
   - **Description:** `"Our SAHAS Alert dashboard tracks multiple seismic parameters across different regions — including Radon, CO₂, Thermal, TEC-V, MF2, and water table fluctuations — for comprehensive pre-seismic analysis."`
 - **Card styling:** Dark card with border, rounded corners, image on top (16:9 aspect ratio), text below. Subtle cyan border-glow on hover. Slight scale(1.02) transform on hover.
 
-#### Section 4: Featured Prediction Highlight
+#### Section 4: Featured Forecast Highlight
 - **Layout:** Full-width section with side-by-side layout (image left, text right on desktop; stacked on mobile).
 - **Image:** `img6.jpg` (Philippine seismic zone dashboard). Rendered with a subtle cyan glow border / shadow.
 - **Content (right side):**
@@ -306,17 +306,17 @@ The home page has **7 sections**, rendered in this exact order:
     - `"Lunar phase correlation: Last quarter — 62% increasing tidal loading"`
     - `"Real-time analysis: May 25 to June 8 assessment window"`
     - `"99% success rate in Eastern Hemisphere earthquake forecasting"`
-  - CTA link: `"View All Predictions →"` → links to `/predictions`
+  - CTA link: `"View All Forecasts →"` → links to `/forecasts`
 
 #### Section 5: Statistics / Impact Counter
 - **Component:** `<StatCounter />`
 - **Layout:** Full-width dark section with 4 stat items in a row.
 - **Background:** Subtle gradient or semi-transparent pattern.
 - **Stats (hardcoded):**
-  1. Icon: seismic wave icon | Number: `99%` | Label: `"Prediction Accuracy"`
+  1. Icon: seismic wave icon | Number: `99%` | Label: `"Forecast Accuracy"`
   2. Icon: globe icon | Number: `15+` | Label: `"Monitoring Stations"`
   3. Icon: calendar icon | Number: `10+` | Label: `"Years of Research"`
-  4. Icon: alert icon | Number: `50+` | Label: `"Verified Predictions"`
+  4. Icon: alert icon | Number: `50+` | Label: `"Verified Forecasts"`
 - **Animation:** Numbers should animate (count up) when the section scrolls into view using `IntersectionObserver`. Use a simple counter effect with `requestAnimationFrame`.
 
 #### Section 6: Media & Recognition Preview
@@ -324,22 +324,22 @@ The home page has **7 sections**, rendered in this exact order:
 - **Featured Video (above the grid):**
   - **Component:** `<VideoEmbed />`
   - **YouTube URL:** `https://www.youtube.com/embed/Uc38C2OJFyg`
-  - **Title:** `"HTV News: Earthquake Prediction Analysis by Umesh Prasad Verma"`
-  - **Description below video:** `"A news report covering Umesh Prasad Verma's earthquake prediction methodology, based on 20 years of research. The report discusses forecasts for the India-Pakistan border region and other seismically active zones."`
+  - **Title:** `"HTV News: Earthquake Forecast Analysis by Umesh Prasad Verma"`
+  - **Description below video:** `"A news report covering Umesh Prasad Verma's earthquake forecast methodology, based on 20 years of research. The report discusses forecasts for the India-Pakistan border region and other seismically active zones."`
   - **Layout:** Full-width 16:9 responsive embed, centered within `var(--max-width)` container, with bottom margin before the card grid.
 - **Item 1:**
   - **Image:** `img12.jpg` (Times of India article)
   - **Title:** `"Times of India: Teacher's Earthquake Forecast Comes True"`
-  - **Description:** `"'Motihari school teacher Umesh Prasad Verma predicted an earthquake of magnitude above six would hit Nepal within 48 hours' — and it came true."`
+  - **Description:** `"'Motihari school teacher Umesh Prasad Verma forecasted an earthquake of magnitude above six would hit Nepal within 48 hours' — and it came true."`
 - **Item 2:**
   - **Image:** `img4.jpeg` (2026 Mindanao earthquake Wikipedia)
-  - **Title:** `"2026 Mindanao Earthquake — Predicted by SAHAS Alert"`
-  - **Description:** `"The magnitude 6.9 earthquake in Glan, Sarangani was successfully predicted using SeismoTeck's multi-parametric monitoring system."`
+  - **Title:** `"2026 Mindanao Earthquake — Forecasted by SAHAS Alert"`
+  - **Description:** `"The magnitude 6.9 earthquake in Glan, Sarangani was successfully forecasted using SeismoTeck's multi-parametric monitoring system."`
 
 #### Section 7: Call to Action / Contact Teaser
 - **Layout:** Centered text block over a dark gradient background.
 - **Heading:** `"Partner with Us for a Safer Tomorrow"`
-- **Subtext:** `"Explore collaboration opportunities in earthquake prediction research, IoT sensor deployment, and disaster preparedness."`
+- **Subtext:** `"Explore collaboration opportunities in earthquake forecast research, IoT sensor deployment, and disaster preparedness."`
 - **CTA Button:** `"Get in Touch"` → links to `/contact`. Primary button style.
 
 ---
@@ -353,16 +353,16 @@ The home page has **7 sections**, rendered in this exact order:
 1. **Page Header Banner**
    - Background: Dark gradient with subtle Earth imagery overlay (use `img1.jpeg` at very low opacity ~10-15%).
    - Heading: `"About SeismoTeck"`
-   - Subtext: `"Pioneering seismic research and earthquake prediction from the heart of India"`
+   - Subtext: `"Pioneering seismic research and earthquake forecast from the heart of India"`
 
 2. **Company Overview**
    - Full-width text block with 2–3 paragraphs describing:
      - SASVC SeismoTech Software India Pvt. Ltd. is based in Patna, Bihar.
      - Founded by Umesh Prasad Verma, a researcher and educator who developed the SAHAS Alert system.
-     - The company specializes in earthquake prediction using satellite data, IoT sensors, and multi-parametric analysis.
+     - The company specializes in earthquake forecast using satellite data, IoT sensors, and multi-parametric analysis.
      - Claims a 99% success rate in forecasting time, location, and intensity of earthquakes in the Eastern Hemisphere.
      - The SAHAS Alert system uses satellite data and can detect underground rumbling sounds within a 10–500 km radius, from 7 days to 2 days before an earthquake, with a final alert approximately 1 minute before.
-   - **IMPORTANT NOTE FOR THE AGENT:** Frame all prediction claims carefully. Use phrasing like "The company reports...", "According to SeismoTeck's research...", "The system is designed to..." — do NOT present unverified claims as established scientific fact.
+   - **IMPORTANT NOTE FOR THE AGENT:** Frame all forecast claims carefully. Use phrasing like "The company reports...", "According to SeismoTeck's research...", "The system is designed to..." — do NOT present unverified claims as established scientific fact.
 
 3. **Founder Spotlight**
    - Side-by-side layout: Photo left, bio right.
@@ -371,9 +371,9 @@ The home page has **7 sections**, rendered in this exact order:
    - **Title:** `"Founder & Lead Researcher"`
    - **Bio (2-3 paragraphs):**
      - Educator and seismology researcher based in Motihari, Bihar.
-     - Has delivered lectures to colleges and institutions about earthquake prediction methodology.
+     - Has delivered lectures to colleges and institutions about earthquake forecast methodology.
      - Developed the SAHAS Alert system and founded SASVC SeismoTech Software India Pvt. Ltd.
-     - Has been featured in Times of India for predicting a magnitude 6+ earthquake in Nepal within 48 hours.
+     - Has been featured in Times of India for forecasting a magnitude 6+ earthquake in Nepal within 48 hours.
 
 4. **Gallery of Recognition / Associations**
    - Heading: `"Recognition & Collaborations"`
@@ -429,27 +429,27 @@ The home page has **7 sections**, rendered in this exact order:
 
 ---
 
-### 5.5 Predictions & Case Studies Page (`/predictions`)
+### 5.5 Forecasts & Case Studies Page (`/forecasts`)
 
-**Page Title (metadata):** `"Predictions & Case Studies"`
+**Page Title (metadata):** `"Forecasts & Case Studies"`
 
 **Sections:**
 
 1. **Page Header Banner**
-   - Heading: `"Predictions & Case Studies"`
-   - Subtext: `"Documented forecasts and verified earthquake predictions"`
+   - Heading: `"Forecasts & Case Studies"`
+   - Subtext: `"Documented forecasts and verified earthquake forecasts"`
 
 2. **Case Study Cards** — Grid of detailed case study entries:
 
    **Case Study 1: 2026 Mindanao Earthquake**
    - **Image:** `img4.jpeg`
    - **Heading:** `"2026 Mindanao Earthquake — Glan, Sarangani"`
-   - **Details:** Successfully predicted by SAHAS Alert. Magnitude and location matched predictions from multi-parametric data analysis.
+   - **Details:** Successfully forecasted by SAHAS Alert. Magnitude and location matched forecasts from multi-parametric data analysis.
 
-   **Case Study 2: Nepal Earthquake Prediction**
+   **Case Study 2: Nepal Earthquake Forecast**
    - **Image:** `img12.jpg`
-   - **Heading:** `"Nepal Earthquake — Magnitude 6+ Predicted Within 48 Hours"`
-   - **Details:** As reported by Times of India: "Motihari school teacher Umesh Prasad Verma predicted an earthquake of magnitude above six would hit Nepal within 48 hours" — and it was confirmed.
+   - **Heading:** `"Nepal Earthquake — Magnitude 6+ Forecasted Within 48 Hours"`
+   - **Details:** As reported by Times of India: "Motihari school teacher Umesh Prasad Verma forecasted an earthquake of magnitude above six would hit Nepal within 48 hours" — and it was confirmed.
 
    **Case Study 3: Japan (Noda) Earthquake**
    - **Image:** `img7.jpg`
@@ -465,8 +465,8 @@ The home page has **7 sections**, rendered in this exact order:
    - Heading: `"Public Earthquake Warnings Issued by SeismoTeck"`
    - Display `img9.jpg` and `img15.jpg` as featured items with descriptions.
    - `img9.jpg` caption: Public warning about earthquake sensitivity in Narkatiaganj (West Champaran, Bihar) and Uttarakhand. Issued by researcher Umesh Prasad Verma.
-   - `img15.jpg` caption: SAHAS Alert system poster outlining prediction methodology and specific forecasted events.
-   - **IMPORTANT:** Add a disclaimer note below this section: _"Note: The predictions and warnings shown above represent claims made by SeismoTeck's research team. They are not independently verified by government seismological agencies."_
+   - `img15.jpg` caption: SAHAS Alert system poster outlining forecast methodology and specific forecasted events.
+   - **IMPORTANT:** Add a disclaimer note below this section: _"Note: The forecasts and warnings shown above represent claims made by SeismoTeck's research team. They are not independently verified by government seismological agencies."_
 
 ---
 
@@ -486,11 +486,11 @@ The home page has **7 sections**, rendered in this exact order:
    - **YouTube URL:** `https://www.youtube.com/embed/Uc38C2OJFyg`
    - **Embed ID:** `Uc38C2OJFyg` (extract from the YouTube URL `https://youtu.be/Uc38C2OJFyg`)
    - **Layout:** Full-width responsive 16:9 iframe embed, centered within `var(--max-width-narrow)` container (900px).
-   - **Title below video:** `"HTV News: Earthquake Prediction Analysis by Umesh Prasad Verma"`
+   - **Title below video:** `"HTV News: Earthquake Forecast Analysis by Umesh Prasad Verma"`
    - **Description below video (2 paragraphs):**
-     - Paragraph 1: `"This news report covers the earthquake prediction work of Umesh Prasad Verma, who is described as having researched earthquake prediction for over 20 years. The report discusses his forecasts for seismically active regions, including the India–Pakistan border, the Afghanistan–Iran border, and the Afghanistan–Pakistan border, with predicted magnitudes ranging from 5.0 to 6.5."`
-     - Paragraph 2: `"According to Verma, his prediction method is based on proprietary data analysis. The report notes that earthquake prediction remains an unsolved scientific challenge, and these forecasts represent Verma's independent research claims."`
-   - **Disclaimer (styled in muted text, smaller font):** `"Note: The predictions discussed in this video represent claims made by the researcher. They are not independently verified by recognized seismological institutions or government agencies."`
+     - Paragraph 1: `"This news report covers the earthquake forecast work of Umesh Prasad Verma, who is described as having researched earthquake forecast for over 20 years. The report discusses his forecasts for seismically active regions, including the India–Pakistan border, the Afghanistan–Iran border, and the Afghanistan–Pakistan border, with forecasted magnitudes ranging from 5.0 to 6.5."`
+     - Paragraph 2: `"According to Verma, his forecast method is based on proprietary data analysis. The report notes that earthquake forecast remains an unsolved scientific challenge, and these forecasts represent Verma's independent research claims."`
+   - **Disclaimer (styled in muted text, smaller font):** `"Note: The forecasts discussed in this video represent claims made by the researcher. They are not independently verified by recognized seismological institutions or government agencies."`
    - **Styling:** Dark card background wrapping the video + text. Rounded corners. Subtle cyan glow border on the video container.
 
 3. **News Articles Grid**
@@ -500,7 +500,7 @@ The home page has **7 sections**, rendered in this exact order:
    - **Article 3:** `img7.jpg` — Japan/Venezuela earthquake coverage. Title: "Dual Earthquake Events: Japan & Venezuela Monitoring".
 
 4. **Earthquake Warning Posters**
-   - Grid showing `img9.jpg` and `img15.jpg` with full descriptions (same as in predictions page).
+   - Grid showing `img9.jpg` and `img15.jpg` with full descriptions (same as in forecasts page).
 
 5. **Recognition & Government Association Gallery**
    - Display in a gallery grid:
@@ -530,7 +530,7 @@ The home page has **7 sections**, rendered in this exact order:
      - **Image:** `img10.jpg` (Founder lecturing) — or use `img14.jpg` (founder with team) if portrait-oriented
      - **Name:** `"Umesh Prasad Verma"`
      - **Role:** `"Founder & Lead Researcher"`
-     - **Bio:** `"Educator, seismology researcher, and inventor of the SAHAS Alert earthquake prediction system. Based in Motihari, Bihar."`
+     - **Bio:** `"Educator, seismology researcher, and inventor of the SAHAS Alert earthquake forecast system. Based in Motihari, Bihar."`
    - **Person 2:**
      - **Image:** `img21.jpg`
      - **Name:** `"Mrs. Sweety Verma"`
@@ -605,7 +605,7 @@ The home page has **7 sections**, rendered in this exact order:
 - **Height:** 70px.
 - **Layout:** Logo (left) + Nav links (center) + CTA button (right). On mobile: hamburger menu.
 - **Logo:** Text-based — `"SeismoTeck"` in `Outfit` font, weight 700, with a cyan accent dot or underline. No image logo needed.
-- **Nav Links:** Home, About, Technology, Predictions, Media, Team, Contact. Font: Inter 500, size 0.9375rem. Hover: cyan underline animation (sliding in from left).
+- **Nav Links:** Home, About, Technology, Forecasts, Media, Team, Contact. Font: Inter 500, size 0.9375rem. Hover: cyan underline animation (sliding in from left).
 - **CTA Button (desktop only):** `"Contact Us"` → `/contact`. Small accent-colored button.
 - **Mobile:** Hamburger icon (3 horizontal lines). Opens a full-screen overlay menu with centered links. Smooth slide-in animation.
 - **Bottom border:** 1px solid `var(--color-border)`.
@@ -614,7 +614,7 @@ The home page has **7 sections**, rendered in this exact order:
 - **Background:** `var(--color-surface)` — darker than primary bg.
 - **Layout:** 4-column grid on desktop, stacked on mobile.
   - **Column 1:** Logo + company description (2-3 lines) + "SASVC SeismoTech Software India Pvt. Ltd."
-  - **Column 2:** Quick Links — Home, About, Technology, Predictions, Media, Team, Contact.
+  - **Column 2:** Quick Links — Home, About, Technology, Forecasts, Media, Team, Contact.
   - **Column 3:** Contact Info — Address (Patna, Bihar), Email.
   - **Column 4:** Social Media placeholder links (LinkedIn, Twitter icons — use `#` as href).
 - **Bottom bar:** Copyright notice: `"© 2026 SASVC SeismoTech Software India Pvt. Ltd. All rights reserved."` — centered, with top border.
@@ -684,8 +684,8 @@ The home page has **7 sections**, rendered in this exact order:
 - **URL:** `https://youtu.be/Uc38C2OJFyg`
 - **Embed URL:** `https://www.youtube.com/embed/Uc38C2OJFyg`
 - **Embed ID:** `Uc38C2OJFyg`
-- **Video Title:** HTV News coverage of earthquake prediction by Umesh Prasad Verma
-- **Video Content Summary:** A news report discussing Umesh Prasad Verma's earthquake prediction work, covering forecasts for the India–Pakistan border (magnitude up to 6.5), Afghanistan–Iran border, Afghanistan–Pakistan border (magnitude 5.0+), and Indonesian/Indian Ocean regions. Claims approximately 75% accuracy over 20 years of research. The report acknowledges earthquake prediction remains scientifically unresolved.
+- **Video Title:** HTV News coverage of earthquake forecast by Umesh Prasad Verma
+- **Video Content Summary:** A news report discussing Umesh Prasad Verma's earthquake forecast work, covering forecasts for the India–Pakistan border (magnitude up to 6.5), Afghanistan–Iran border, Afghanistan–Pakistan border (magnitude 5.0+), and Indonesian/Indian Ocean regions. Claims approximately 75% accuracy over 20 years of research. The report acknowledges earthquake forecast remains scientifically unresolved.
 - **Used on pages:** Home (Section 6: Media Preview), Media page (Section 2: Featured Video)
 
 ---
@@ -697,18 +697,18 @@ The home page has **7 sections**, rendered in this exact order:
 | `img1.jpeg` | Home Hero, About page header bg | Earth from space, India highlighted — hero background |
 | `img2.jpeg` | Home Innovations grid, Technology page | Earth + tectonic plates + dashboard — seismic imaging |
 | `img3.jpeg` | Home Innovations grid, Technology page | IoT sensor field deployment — product showcase |
-| `img4.jpeg` | Home Media preview, Predictions page, Media page | Wikipedia: 2026 Mindanao earthquake article |
+| `img4.jpeg` | Home Media preview, Forecasts page, Media page | Wikipedia: 2026 Mindanao earthquake article |
 | `img5.jpg` | Home Innovations grid, Technology page | Multi-location earthquake dashboard |
-| `img6.jpg` | Home Featured Prediction, Predictions page | Philippine seismic zone dashboard |
-| `img7.jpg` | Predictions page, Media page | Japan (Noda) + Venezuela earthquakes |
+| `img6.jpg` | Home Featured Forecast, Forecasts page | Philippine seismic zone dashboard |
+| `img7.jpg` | Forecasts page, Media page | Japan (Noda) + Venezuela earthquakes |
 | `img8.jpg` | About gallery, Media gallery | Founder with IPS officer |
-| `img9.jpg` | Predictions page, Media page | Earthquake warning poster (Hindi) |
+| `img9.jpg` | Forecasts page, Media page | Earthquake warning poster (Hindi) |
 | `img10.jpg` | About Founder Spotlight, Team page | Founder lecturing to students |
 | `img11.jpg` | About gallery, Media gallery | Founder with influential person |
-| `img12.jpg` | Home Media preview, Predictions page, Media page | Times of India article screenshot |
+| `img12.jpg` | Home Media preview, Forecasts page, Media page | Times of India article screenshot |
 | `img13.jpg` | About gallery, Media gallery | Founder at Founders Meet |
 | `img14.jpg` | Team page | Founder with team |
-| `img15.jpg` | Predictions page, Media page, Technology page | SAHAS Alert system poster |
+| `img15.jpg` | Forecasts page, Media page, Technology page | SAHAS Alert system poster |
 | `img16.jpg` | About gallery, Media gallery | Collage: military + Dept. of Industries |
 | `img17.jpg` | About gallery, Media gallery | With diplomats at Bihar govt office |
 | `img18.jpg` | Technology page, Team page | Team working on IoT devices |
@@ -765,7 +765,7 @@ The home page has **7 sections**, rendered in this exact order:
 export const COMPANY = {
   name: 'SASVC SeismoTech Software India Pvt. Ltd.',
   shortName: 'SeismoTeck',
-  tagline: 'Pioneering Earthquake Prediction Through Advanced Seismic Research',
+  tagline: 'Pioneering Earthquake Forecast Through Advanced Seismic Research',
   address: 'Patna, Bihar, India',
   email: 'info@seismoteck.com',
   founder: 'Umesh Prasad Verma',
@@ -777,17 +777,17 @@ export const NAV_LINKS = [
   { label: 'Home', href: '/' },
   { label: 'About', href: '/about' },
   { label: 'Technology', href: '/technology' },
-  { label: 'Predictions', href: '/predictions' },
+  { label: 'Forecasts', href: '/forecasts' },
   { label: 'Media', href: '/media' },
   { label: 'Team', href: '/team' },
   { label: 'Contact', href: '/contact' },
 ] as const;
 
 export const STATS = [
-  { value: 99, suffix: '%', label: 'Prediction Accuracy' },
+  { value: 99, suffix: '%', label: 'Forecast Accuracy' },
   { value: 15, suffix: '+', label: 'Monitoring Stations' },
   { value: 10, suffix: '+', label: 'Years of Research' },
-  { value: 50, suffix: '+', label: 'Verified Predictions' },
+  { value: 50, suffix: '+', label: 'Verified Forecasts' },
 ] as const;
 ```
 
@@ -816,7 +816,7 @@ npm start
 1. **DO NOT install Tailwind CSS.** Use only vanilla CSS with CSS Modules.
 2. **DO NOT use any placeholder images.** All images are provided in `assets/` — copy them to `public/assets/` and use them via Next.js `<Image>` component with path `/assets/img1.jpeg` etc.
 3. **DO NOT fabricate or hallucinate content.** Use ONLY the text, descriptions, and claims provided in this file and `assets/img_description.md`.
-4. **Frame all earthquake prediction claims carefully.** Use phrases like "according to SeismoTeck's research", "the company reports", "the system is designed to". NEVER present unverified claims as established scientific fact.
+4. **Frame all earthquake forecast claims carefully.** Use phrases like "according to SeismoTeck's research", "the company reports", "the system is designed to". NEVER present unverified claims as established scientific fact.
 5. **Use the exact image filenames.** Note the mixed extensions: `img1.jpeg`, `img2.jpeg`, `img3.jpeg`, and `img4.jpeg` are `.jpeg`; `img5.jpg` onward are `.jpg`. Use the correct extension for each.
 6. **All components must use CSS Modules** (`.module.css` files), NOT inline styles.
 7. **Use Next.js App Router** conventions. Server components by default; add `'use client'` only where React hooks or browser APIs are needed (forms, IntersectionObserver, etc.).

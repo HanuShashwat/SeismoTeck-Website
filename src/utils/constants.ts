@@ -10,15 +10,15 @@ export const NAV_LINKS = [
   { label: "Home", href: "/" },
   { label: "About", href: "/about" },
   { label: "Technology", href: "/technology" },
-  { label: "Predictions", href: "/predictions" },
+  { label: "Forecasts", href: "/forecasts" },
   { label: "Media", href: "/media" },
   { label: "Team", href: "/team" },
   { label: "Contact", href: "/contact" },
 ];
 
 export const STATS = [
-  { icon: "activity", number: "99%", label: "Prediction Accuracy" },
+  { icon: "activity", number: "99%", label: "Forecast Accuracy" },
   { icon: "globe", number: "15+", label: "Monitoring Stations" },
   { icon: "calendar", number: "10+", label: "Years of Research" },
-  { icon: "alert", number: "50+", label: "Verified Predictions" },
+  { icon: "alert", number: "50+", label: "Verified Forecasts" },
 ];

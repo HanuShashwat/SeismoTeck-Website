@@ -16,13 +16,13 @@ const outfit = Outfit({
 
 export const metadata: Metadata = {
   title: {
-    default: "SeismoTeck — Advanced Earthquake Prediction & Seismic Research",
+    default: "SeismoTeck — Advanced Earthquake Forecast & Seismic Research",
     template: "%s | SeismoTeck",
   },
   description:
-    "SASVC SeismoTech Software India Pvt. Ltd. — Pioneering earthquake prediction through advanced multi-parametric monitoring, IoT sensors, and satellite-based seismic analysis.",
+    "SASVC SeismoTech Software India Pvt. Ltd. — Pioneering earthquake forecast through advanced multi-parametric monitoring, IoT sensors, and satellite-based seismic analysis.",
   keywords: [
-    "earthquake prediction",
+    "earthquake forecast",
     "seismic monitoring",
     "IoT sensors",
     "seismology",
@@ -32,9 +32,9 @@ export const metadata: Metadata = {
     "India",
   ],
   openGraph: {
-    title: "SeismoTeck — Advanced Earthquake Prediction",
+    title: "SeismoTeck — Advanced Earthquake Forecast",
     description:
-      "Pioneering earthquake prediction through advanced seismic research and IoT monitoring.",
+      "Pioneering earthquake forecast through advanced seismic research and IoT monitoring.",
     type: "website",
     locale: "en_IN",
   },

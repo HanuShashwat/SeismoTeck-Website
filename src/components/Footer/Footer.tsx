@@ -14,7 +14,7 @@ export default function Footer() {
             <h3 className={styles.brand}>{COMPANY_INFO.brand}</h3>
             <p className={styles.description}>
               {COMPANY_INFO.name}<br />
-              Pioneering earthquake prediction through advanced multi-parametric monitoring.
+              Pioneering earthquake forecast through advanced multi-parametric monitoring.
             </p>
           </div>
 
@@ -50,7 +50,7 @@ export default function Footer() {
         <div className={styles.bottomBar}>
           <p>&copy; {currentYear} {COMPANY_INFO.name}. All rights reserved.</p>
           <p className={styles.disclaimer}>
-            The predictions and claims presented on this website are based on the independent research of SeismoTeck and are not verified by official government seismology departments unless explicitly stated.
+            The forecasts and claims presented on this website are based on the independent research of SeismoTeck and are not verified by official government seismology departments unless explicitly stated.
           </p>
         </div>
       </div>

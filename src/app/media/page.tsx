@@ -35,9 +35,9 @@ export default function MediaPage() {
             <div className={styles.videoContainer}>
               <VideoEmbed
                 embedId="Uc38C2OJFyg"
-                title="HTV News: Earthquake Prediction Analysis by Umesh Prasad Verma"
-                description={`This news report covers Umesh Prasad Verma's earthquake prediction methodology, based on over 20 years of research. \n\nThe report discusses forecasts for the India-Pakistan border region and other seismically active zones.`}
-                disclaimer="Disclaimer: The predictions in this video are based on independent research and are not verified by official government seismology departments."
+                title="HTV News: Earthquake Forecast Analysis by Umesh Prasad Verma"
+                description={`This news report covers Umesh Prasad Verma's earthquake forecast methodology, based on over 20 years of research. \n\nThe report discusses forecasts for the India-Pakistan border region and other seismically active zones.`}
+                disclaimer="Disclaimer: The forecasts in this video are based on independent research and are not verified by official government seismology departments."
               />
             </div>
           </ScrollReveal>
@@ -56,15 +56,15 @@ export default function MediaPage() {
               <NewsCard
                 imagePath="/assets/img12.jpg"
                 title="Times of India: Teacher's Earthquake Forecast Comes True"
-                description="'Motihari school teacher Umesh Prasad Verma predicted an earthquake of magnitude above six would hit Nepal within 48 hours' — and it came true. This verified prediction brought national attention to the SAHAS Alert system."
+                description="'Motihari school teacher Umesh Prasad Verma forecasted an earthquake of magnitude above six would hit Nepal within 48 hours' — and it came true. This verified forecast brought national attention to the SAHAS Alert system."
                 altText="Times of India article screenshot"
               />
             </ScrollReveal>
             <ScrollReveal direction="up" delay={200}>
               <NewsCard
                 imagePath="/assets/img4.jpeg"
-                title="2026 Mindanao Earthquake Predicted"
-                description="The magnitude 6.9 earthquake in Glan, Sarangani was successfully predicted. Our multi-parametric monitoring dashboard detected pre-seismic anomalies days in advance."
+                title="2026 Mindanao Earthquake Forecasted"
+                description="The magnitude 6.9 earthquake in Glan, Sarangani was successfully forecasted. Our multi-parametric monitoring dashboard detected pre-seismic anomalies days in advance."
                 altText="2026 Mindanao earthquake article"
               />
             </ScrollReveal>

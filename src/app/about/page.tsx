@@ -60,7 +60,7 @@ export default function AboutPage() {
           <ScrollReveal>
             <h1 className={styles.bannerTitle}>About SeismoTeck</h1>
             <p className={styles.bannerSubtext}>
-              Pioneering seismic research and earthquake prediction from the heart of India
+              Pioneering seismic research and earthquake forecast from the heart of India
             </p>
           </ScrollReveal>
         </div>
@@ -77,7 +77,7 @@ export default function AboutPage() {
                 Founded by Umesh Prasad Verma, an esteemed researcher and educator who developed the proprietary SAHAS Alert system.
               </p>
               <p>
-                Our company specializes in advanced earthquake prediction utilizing satellite data, field-deployed IoT sensors, and multi-parametric analysis. 
+                Our company specializes in advanced earthquake forecast utilizing satellite data, field-deployed IoT sensors, and multi-parametric analysis. 
                 According to SeismoTeck&apos;s extensive research spanning over 10 years, the system is designed to forecast the time, location, and intensity of earthquakes in the Eastern Hemisphere with remarkable accuracy.
               </p>
               <p>
@@ -118,10 +118,10 @@ export default function AboutPage() {
                   An esteemed educator and dedicated seismology researcher based in Motihari, Bihar, Umesh Prasad Verma has committed over two decades to unraveling the complex patterns of seismic activity.
                 </p>
                 <p>
-                  He has delivered countless lectures to engineering colleges and scientific institutions, advocating for a multi-parametric approach to earthquake prediction. His methodology goes beyond traditional seismology by incorporating IoT environmental data and satellite imaging.
+                  He has delivered countless lectures to engineering colleges and scientific institutions, advocating for a multi-parametric approach to earthquake forecast. His methodology goes beyond traditional seismology by incorporating IoT environmental data and satellite imaging.
                 </p>
                 <p>
-                  He is the mastermind behind the SAHAS Alert system and the driving force of SASVC SeismoTech. His prediction methodology gained national attention when featured in the Times of India after successfully predicting a magnitude 6+ earthquake in Nepal within 48 hours.
+                  He is the mastermind behind the SAHAS Alert system and the driving force of SASVC SeismoTech. His forecast methodology gained national attention when featured in the Times of India after successfully forecasting a magnitude 6+ earthquake in Nepal within 48 hours.
                 </p>
               </div>
             </ScrollReveal>

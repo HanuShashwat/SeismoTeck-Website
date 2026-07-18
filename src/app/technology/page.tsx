@@ -7,7 +7,7 @@ import ScrollReveal from "@/components/ScrollReveal/ScrollReveal";
 
 export const metadata: Metadata = {
   title: "Technology & Products",
-  description: "Explore SeismoTeck's advanced earthquake prediction technology, IoT sensors, and the SAHAS Alert system.",
+  description: "Explore SeismoTeck's advanced earthquake forecast technology, IoT sensors, and the SAHAS Alert system.",
 };
 
 export default function TechnologyPage() {
@@ -135,7 +135,7 @@ export default function TechnologyPage() {
                   Visualizing the invisible forces beneath the Earth&apos;s crust is critical to our predictive models. Our software generates advanced seismic imaging based on historical earthquake data, active fault lines, and seismic frequency waveforms.
                 </p>
                 <p>
-                  This holistic visualization approach allows our researchers to identify stress accumulation points and predict where the crust is most likely to fracture next.
+                  This holistic visualization approach allows our researchers to identify stress accumulation points and forecast where the crust is most likely to fracture next.
                 </p>
               </div>
             </ScrollReveal>

@@ -1,13 +1,13 @@
 import React from "react";
 import Image from "next/image";
 import { Metadata } from "next";
-import styles from "./predictions.module.css";
+import styles from "./forecasts.module.css";
 import SectionHeading from "@/components/SectionHeading/SectionHeading";
 import ScrollReveal from "@/components/ScrollReveal/ScrollReveal";
 
 export const metadata: Metadata = {
-  title: "Predictions & Case Studies",
-  description: "Review SeismoTeck's track record of verified earthquake predictions and case studies.",
+  title: "Forecasts & Case Studies",
+  description: "Review SeismoTeck's track record of verified earthquake forecasts and case studies.",
 };
 
 export default function PredictionsPage() {
@@ -17,7 +17,7 @@ export default function PredictionsPage() {
       <section className={styles.headerBanner}>
         <div className={styles.bannerContent}>
           <ScrollReveal>
-            <h1 className={styles.bannerTitle}>Predictions & Case Studies</h1>
+            <h1 className={styles.bannerTitle}>Forecasts & Case Studies</h1>
             <p className={styles.bannerSubtext}>
               Real-world validations of our multi-parametric forecasting models
             </p>
@@ -46,7 +46,7 @@ export default function PredictionsPage() {
                 <ul className={styles.dataList}>
                   <li><strong>KP Index:</strong> 6.8 (Storm Level) indicates high solar magnetic interference.</li>
                   <li><strong>Lunar Phase:</strong> Last quarter, causing 62% increasing tidal loading on tectonic plates.</li>
-                  <li><strong>Outcome:</strong> A significant seismic event occurred perfectly within the predicted timeframe and region.</li>
+                  <li><strong>Outcome:</strong> A significant seismic event occurred perfectly within the forecasted timeframe and region.</li>
                 </ul>
               </div>
             </ScrollReveal>
@@ -68,7 +68,7 @@ export default function PredictionsPage() {
             <ScrollReveal direction="left" delay={200}>
               <div className={styles.textContent}>
                 <p>
-                  The magnitude 6.9 earthquake in Glan, Sarangani was successfully predicted by SeismoTeck.
+                  The magnitude 6.9 earthquake in Glan, Sarangani was successfully forecasted by SeismoTeck.
                 </p>
                 <p>
                   By analyzing underground thermal fluctuations alongside radon gas emissions from local IoT sensors, our team was able to issue an advance warning before the devastating tremor struck.
@@ -108,7 +108,7 @@ export default function PredictionsPage() {
       <section className={styles.disclaimerSection}>
         <div className={styles.container}>
           <p className={styles.disclaimerText}>
-            <strong>Disclaimer:</strong> The predictions and case studies presented on this website reflect the independent research and technological capabilities of SASVC SeismoTech. They are intended for research, educational, and preparedness purposes. Official government alerts should always take precedence during emergencies.
+            <strong>Disclaimer:</strong> The forecasts and case studies presented on this website reflect the independent research and technological capabilities of SASVC SeismoTech. They are intended for research, educational, and preparedness purposes. Official government alerts should always take precedence during emergencies.
           </p>
         </div>
       </section>

@@ -47,7 +47,7 @@
 - **Orientation:** Portrait (tall)
 - **Visual description:** A screenshot of a Wikipedia article page titled "2026 Mindanao earthquake". The article shows a photograph of a severely damaged and cracked highway in Glan, Sarangani, Philippines, with people walking through the destruction. Below the photo, there is a map of the southern Philippines showing the earthquake epicenter near Davao City/General Santos, marked with concentric red circles. The article metadata shows: UTC time 2026-06-07 23:37:40, ISC event ID 645871578. The overall layout is standard Wikipedia formatting with white background.
 - **Color palette:** White Wikipedia background, grey text, blue hyperlinks, red seismic zone markers on the map.
-- **Recommended use:** Home page Media preview, Predictions page (Case Study 1), Media page (News Articles grid).
+- **Recommended use:** Home page Media preview, Forecasts page (Case Study 1), Media page (News Articles grid).
 - **Alt text for website:** `"Wikipedia article documenting the 2026 Mindanao earthquake in Glan, Sarangani, showing highway damage and epicenter map"`
 
 ---
@@ -84,7 +84,7 @@
   - Bottom-center: "VULNERABILITY LEVEL (VL)" legend — CRITICAL (red), HIGH WATCH (orange), ELEVATED RISK (yellow), STABLE (cyan)
   - SeismoTech (SUV SEISMOTECH) logo in top-left
 - **Color palette:** Dark blue/black sci-fi aesthetic, cyan/teal highlights, red alert markers, orange warnings, green data charts.
-- **Recommended use:** Home page Featured Prediction section (Section 4), Predictions page (Case Study 4), Technology page (Monitoring Dashboard).
+- **Recommended use:** Home page Featured Forecast section (Section 4), Forecasts page (Case Study 4), Technology page (Monitoring Dashboard).
 - **Alt text for website:** `"SeismoTech advanced multi-parametric monitoring dashboard for the Philippine Archipelago Seismic Zone showing critical assessment data"`
 
 ---
@@ -95,7 +95,7 @@
 - **Orientation:** Square/slightly landscape
 - **Visual description:** A dramatic satellite nighttime view of Japan from space, with a large earthquake visualization centered on Noda, Japan, showing concentric red/pink seismic wave circles radiating from the epicenter with magnitude "6.9" displayed prominently in large white text. Geographic labels visible: HOKKAIDO, AOMORI, NODA (JAPAN), IWATE, SENDAI, TOKYO. In the top-left corner, there is an inset box labeled "EARLIER TODAY" showing a similar earthquake visualization for "MORÓN, VENEZUELA" with magnitude "7.1" and concentric red circles. A "MrMBB333" credit watermark appears in the bottom-right corner.
 - **Color palette:** Deep dark blue ocean/land, glowing orange city lights, bright red/pink seismic wave rings, white text.
-- **Recommended use:** Predictions page (Case Study 3 — Japan/Venezuela), Media page (News Articles grid).
+- **Recommended use:** Forecasts page (Case Study 3 — Japan/Venezuela), Media page (News Articles grid).
 - **Alt text for website:** `"Satellite visualization of magnitude 6.9 earthquake near Noda, Japan, with inset showing magnitude 7.1 earthquake in Morón, Venezuela"`
 
 ---
@@ -125,8 +125,8 @@
   - Bottom warning: "अलर्ट रहें! सतर्क रहें!!" (Stay Alert! Stay Cautious!!) with a warning triangle icon
   - Fine print about monitoring seismic activities
 - **Color palette:** Dark red/black gradient, white/yellow Hindi text, red map markers, yellow warning elements.
-- **Recommended use:** Predictions page (Earthquake Warning Posters), Media page (Warning Posters section).
-- **Alt text for website:** `"HTV News earthquake warning poster in Hindi, featuring researcher Umesh Prasad Verma's prediction for Narkatiaganj and Uttarakhand regions"`
+- **Recommended use:** Forecasts page (Earthquake Warning Posters), Media page (Warning Posters section).
+- **Alt text for website:** `"HTV News earthquake warning poster in Hindi, featuring researcher Umesh Prasad Verma's forecast for Narkatiaganj and Uttarakhand regions"`
 - **IMPORTANT NOTE:** This poster presents claims by the researcher. The AI agent should include a disclaimer when using this image on the website.
 
 ---
@@ -161,10 +161,10 @@
   - **Headline (bold):** "18 hours on, teacher's forecast comes true"
   - **Byline:** B K Mishra / TNN / Updated: May 13, 2015, 01:11 IST
   - **TOI logo:** Red background with white "TOI" letters
-  - **Article text:** "PATNA: What Motihari schoolteacher Umesh Prasad Verma had predicted on Monday evening, proved exactly true on Tuesday noon. Based on his calculations, Verma predicted an earthquake of a magnitude of above 6 would hit Nepal within 48 hours."
+  - **Article text:** "PATNA: What Motihari schoolteacher Umesh Prasad Verma had forecasted on Monday evening, proved exactly true on Tuesday noon. Based on his calculations, Verma forecasted an earthquake of a magnitude of above 6 would hit Nepal within 48 hours."
 - **Color palette:** White background, black text, red TOI logo, blue hyperlinks.
-- **Recommended use:** Home page Media preview (Item 1), Predictions page (Case Study 2), Media page (News Articles grid — Article 1). This is a KEY credibility asset — feature it prominently.
-- **Alt text for website:** `"Times of India newspaper article titled '18 hours on, teacher's forecast comes true' about Umesh Prasad Verma's earthquake prediction for Nepal"`
+- **Recommended use:** Home page Media preview (Item 1), Forecasts page (Case Study 2), Media page (News Articles grid — Article 1). This is a KEY credibility asset — feature it prominently.
+- **Alt text for website:** `"Times of India newspaper article titled '18 hours on, teacher's forecast comes true' about Umesh Prasad Verma's earthquake forecast for Nepal"`
 
 ---
 
@@ -195,15 +195,15 @@
 - **File extension:** `.jpg`
 - **Orientation:** Portrait (cropped close-up of a newspaper/poster)
 - **Visual description:** A close-up photograph of a Hindi-language newspaper clipping or printed poster showing the face of Umesh Prasad Verma alongside text. The visible Hindi text describes:
-  - SAHAS Alert system and medium-range earthquake prediction capabilities
+  - SAHAS Alert system and medium-range earthquake forecast capabilities
   - The company name: "SASVC SeismoTeck Software India Private Limited, Patna, Bihar"
   - Claims about 99% accuracy in forecasting time, location, and intensity of earthquakes in the Eastern Hemisphere using satellite data
   - Detection of underground rumbling sounds within 10-500 km radius, from 7 days to 2 days before an earthquake, and a final alert approximately 1 minute before
-  - Specific predictions: magnitude 5.0-5.5 earthquakes within 7 days; magnitude 5.0-6.0 in Indonesian and Indian Ocean regions (December 28-29); magnitude 5.0-6.0 in Japan Sea by December 31
+  - Specific forecasts: magnitude 5.0-5.5 earthquakes within 7 days; magnitude 5.0-6.0 in Indonesian and Indian Ocean regions (December 28-29); magnitude 5.0-6.0 in Japan Sea by December 31
   The image is slightly blurry and appears to be a photo of a printed document.
 - **Color palette:** Newsprint tones — cream/white paper, black Hindi text, skin tones in the portrait.
-- **Recommended use:** Technology page (SAHAS Alert System section), Predictions page (Earthquake Warning Posters), Media page (Warning Posters).
-- **Alt text for website:** `"SAHAS Alert earthquake prediction system poster describing SeismoTeck's forecasting methodology and specific predictions"`
+- **Recommended use:** Technology page (SAHAS Alert System section), Forecasts page (Earthquake Warning Posters), Media page (Warning Posters).
+- **Alt text for website:** `"SAHAS Alert earthquake forecast system poster describing SeismoTeck's forecasting methodology and specific forecasts"`
 - **IMPORTANT NOTE:** The claims in this poster are presented as the researcher's own. A disclaimer should accompany this image on the website.
 
 ---

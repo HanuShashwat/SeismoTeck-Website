@@ -30,7 +30,7 @@ export default function Home() {
           <ScrollReveal>
             <SectionHeading
               title="Our Innovations"
-              subtext="Advanced technology driving the future of earthquake prediction"
+              subtext="Advanced technology driving the future of earthquake forecast"
             />
           </ScrollReveal>
 
@@ -63,7 +63,7 @@ export default function Home() {
         </div>
       </section>
 
-      {/* Section 4: Featured Prediction Highlight */}
+      {/* Section 4: Featured Forecast Highlight */}
       <section className={`${styles.section} ${styles.bgSecondary}`}>
         <div className={styles.container}>
           <div className={styles.featuredGrid}>
@@ -88,8 +88,8 @@ export default function Home() {
                   <li>Real-time analysis: May 25 to June 8 assessment window</li>
                   <li>99% success rate in Eastern Hemisphere earthquake forecasting</li>
                 </ul>
-                <Link href="/predictions" className={styles.linkButton}>
-                  View All Predictions →
+                <Link href="/forecasts" className={styles.linkButton}>
+                  View All Forecasts →
                 </Link>
               </div>
             </ScrollReveal>
@@ -114,8 +114,8 @@ export default function Home() {
             <div className={styles.videoSection}>
               <VideoEmbed
                 embedId="Uc38C2OJFyg"
-                title="HTV News: Earthquake Prediction Analysis by Umesh Prasad Verma"
-                description={`A news report covering Umesh Prasad Verma's earthquake prediction methodology, based on 20 years of research. The report discusses forecasts for the India-Pakistan border region and other seismically active zones.`}
+                title="HTV News: Earthquake Forecast Analysis by Umesh Prasad Verma"
+                description={`A news report covering Umesh Prasad Verma's earthquake forecast methodology, based on 20 years of research. The report discusses forecasts for the India-Pakistan border region and other seismically active zones.`}
               />
             </div>
           </ScrollReveal>
@@ -125,15 +125,15 @@ export default function Home() {
               <NewsCard
                 imagePath="/assets/img12.jpg"
                 title="Times of India: Teacher's Earthquake Forecast Comes True"
-                description="'Motihari school teacher Umesh Prasad Verma predicted an earthquake of magnitude above six would hit Nepal within 48 hours' — and it came true."
+                description="'Motihari school teacher Umesh Prasad Verma forecasted an earthquake of magnitude above six would hit Nepal within 48 hours' — and it came true."
                 altText="Times of India article"
               />
             </ScrollReveal>
             <ScrollReveal delay={300} direction="up">
               <NewsCard
                 imagePath="/assets/img4.jpeg"
-                title="2026 Mindanao Earthquake — Predicted by SAHAS Alert"
-                description="The magnitude 6.9 earthquake in Glan, Sarangani was successfully predicted using SeismoTeck's multi-parametric monitoring system."
+                title="2026 Mindanao Earthquake — Forecasted by SAHAS Alert"
+                description="The magnitude 6.9 earthquake in Glan, Sarangani was successfully forecasted using SeismoTeck's multi-parametric monitoring system."
                 altText="2026 Mindanao earthquake Wikipedia"
               />
             </ScrollReveal>
@@ -154,7 +154,7 @@ export default function Home() {
             <div className={styles.ctaContent}>
               <h2 className={styles.ctaTitle}>Partner with Us for a Safer Tomorrow</h2>
               <p className={styles.ctaSubtext}>
-                Explore collaboration opportunities in earthquake prediction research, IoT sensor deployment, and disaster preparedness.
+                Explore collaboration opportunities in earthquake forecast research, IoT sensor deployment, and disaster preparedness.
               </p>
               <Link href="/contact" className={styles.primaryButton}>
                 Get in Touch

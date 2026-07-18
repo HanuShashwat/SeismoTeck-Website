@@ -16,7 +16,7 @@
   --color-accent-secondary: #00bcd4;
   --color-accent-warm: #f59e0b;        /* Amber for warnings/highlights */
   --color-accent-danger: #ef4444;      /* Red for seismic alerts */
-  --color-accent-success: #10b981;     /* Green for verified predictions */
+  --color-accent-success: #10b981;     /* Green for verified forecasts */
 
   --gradient-hero: linear-gradient(135deg, #0a0e17 0%, #0f2027 50%, #0a0e17 100%);
   --gradient-card: linear-gradient(145deg, #1a1f2e, #111827);
