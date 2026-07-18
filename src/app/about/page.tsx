@@ -5,6 +5,7 @@ import styles from "./about.module.css";
 import SectionHeading from "@/components/SectionHeading/SectionHeading";
 import ImageGallery from "@/components/ImageGallery/ImageGallery";
 import ScrollReveal from "@/components/ScrollReveal/ScrollReveal";
+import VisionMission from "@/components/VisionMission/VisionMission";
 import { COMPANY_INFO } from "@/utils/constants";
 
 export const metadata: Metadata = {
@@ -85,6 +86,9 @@ export default function AboutPage() {
               </p>
             </div>
           </ScrollReveal>
+          
+          {/* New Vision & Mission Content */}
+          <VisionMission />
         </div>
       </section>
 
