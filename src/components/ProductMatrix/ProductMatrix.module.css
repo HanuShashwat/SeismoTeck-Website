@@ -1,19 +1,11 @@
-.containerWrapper {
-  position: relative;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  perspective: 1200px;
-  overflow-x: hidden;
-  padding: var(--space-xl) var(--space-md);
+.section {
+  padding: var(--space-section) 0;
 }
 
-.portalStage {
-  width: 100%;
+.containerWrapper {
   max-width: var(--max-width);
-  z-index: 2;
-  transform-style: preserve-3d;
-  will-change: transform;
+  margin: 0 auto;
+  padding: 0 var(--space-md);
 }
 
 .portalCard {
@@ -23,45 +15,19 @@
   border: 1px solid var(--color-border-glow);
   border-radius: var(--border-radius-xl);
   padding: var(--space-xl);
-  box-shadow: 0 35px 70px rgba(0, 0, 0, 0.7), inset 0 1px 1px rgba(255, 255, 255, 0.05);
-  transform-style: preserve-3d;
-}
-
-.portalHeader {
-  text-align: center;
-  margin-bottom: var(--space-xl);
-  transform: translateZ(60px);
-}
-
-.brandLogoIcon {
-  font-size: 3.5rem;
-  color: var(--color-accent-primary);
-  font-weight: bold;
-  text-shadow: var(--glow-cyan-strong);
-}
-
-.brandTitle {
-  font-size: var(--fs-h2);
-  letter-spacing: 3px;
-  text-transform: uppercase;
-  background: linear-gradient(135deg, #fff, var(--color-accent-secondary));
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  font-family: var(--font-heading);
+  box-shadow: var(--glow-cyan);
 }
 
 .portalBody {
   display: grid;
   grid-template-columns: 280px 1fr;
   gap: var(--space-xl);
-  transform-style: preserve-3d;
 }
 
 .taskMenu {
   display: flex;
   flex-direction: column;
   gap: var(--space-sm);
-  transform: translateZ(40px);
 }
 
 .menuBtn {
@@ -84,7 +50,7 @@
   background: var(--color-accent-primary);
   border-color: var(--color-accent-primary);
   box-shadow: var(--glow-cyan);
-  transform: translateX(5px) translateZ(10px);
+  transform: translateX(5px);
 }
 
 .contentStage {
@@ -92,19 +58,32 @@
   border: 1px solid rgba(0, 229, 255, 0.1);
   border-radius: var(--border-radius-lg);
   padding: var(--space-xl);
-  min-height: 550px;
-  transform: translateZ(30px);
-  transform-style: preserve-3d;
+  height: 550px;
+  overflow-y: auto;
+}
+
+.contentStage::-webkit-scrollbar {
+  width: 8px;
+}
+.contentStage::-webkit-scrollbar-track {
+  background: rgba(0, 0, 0, 0.2);
+  border-radius: 4px;
+}
+.contentStage::-webkit-scrollbar-thumb {
+  background: rgba(0, 229, 255, 0.2);
+  border-radius: 4px;
+}
+.contentStage::-webkit-scrollbar-thumb:hover {
+  background: rgba(0, 229, 255, 0.4);
 }
 
 .contentPanel {
   animation: fadeIn 0.5s ease forwards;
-  transform-style: preserve-3d;
 }
 
 @keyframes fadeIn {
-  from { opacity: 0; transform: translateZ(-10px); }
-  to { opacity: 1; transform: translateZ(0); }
+  from { opacity: 0; transform: translateY(10px); }
+  to { opacity: 1; transform: translateY(0); }
 }
 
 .panelTitle {
@@ -209,9 +188,7 @@
   height: 120px;
   border: 2px solid var(--color-accent-primary);
   position: relative;
-  transform: rotateX(60deg) rotateZ(45deg);
-  transform-style: preserve-3d;
-  animation: cubeRotate 10s linear infinite;
+  transform: rotateZ(45deg);
 }
 
 .wireframeBox::before, .wireframeBox::after {
@@ -220,14 +197,6 @@
   width: 100%; height: 100%;
   border: 2px solid var(--color-accent-primary);
   left: 0; top: 0;
-}
-
-.wireframeBox::before { transform: translateZ(60px); }
-.wireframeBox::after { transform: translateZ(-60px); }
-
-@keyframes cubeRotate {
-  0% { transform: rotateX(60deg) rotateZ(0deg); }
-  100% { transform: rotateX(60deg) rotateZ(360deg); }
 }
 
 .blueprintLabel {
