@@ -37,7 +37,11 @@ export default function Footer() {
             <h4 className={styles.heading}>Contact</h4>
             <ul className={styles.contactInfo}>
               <li>{COMPANY_INFO.location}</li>
-              <li>{COMPANY_INFO.email}</li>
+              <li>
+                {COMPANY_INFO.emails.map((email, idx) => (
+                  <span key={idx} style={{ display: "block" }}>{email}</span>
+                ))}
+              </li>
               <li>{COMPANY_INFO.phone}</li>
             </ul>
           </div>

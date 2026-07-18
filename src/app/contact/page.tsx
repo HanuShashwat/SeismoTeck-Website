@@ -53,9 +53,11 @@ export default function ContactPage() {
                     <div className={styles.iconWrapper}>✉️</div>
                     <div>
                       <h4 className={styles.infoTitle}>Email</h4>
-                      <p className={styles.infoText}>
-                        <a href={`mailto:${COMPANY_INFO.email}`}>{COMPANY_INFO.email}</a>
-                      </p>
+                      {COMPANY_INFO.emails.map((email, idx) => (
+                        <p className={styles.infoText} key={idx}>
+                          <a href={`mailto:${email}`}>{email}</a>
+                        </p>
+                      ))}
                     </div>
                   </div>
 

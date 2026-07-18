@@ -2,8 +2,8 @@ export const COMPANY_INFO = {
   name: "SASVC SeismoTech Software India Pvt. Ltd.",
   brand: "SeismoTeck",
   location: "Patna, Bihar, India",
-  email: "contact@seismoteck.com",
-  phone: "+91 00000 00000",
+  emails: ["upseismotek1962@gmail.com", "umeshprasadverma64@gmail.com"],
+  phone: "+91 9473289401",
 };
 
 export const NAV_LINKS = [
