@@ -268,11 +268,15 @@
 
 /* Form */
 .quoteForm {
-  display: flex;
-  flex-direction: column;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
   gap: var(--space-md);
-  max-width: 500px;
   margin-top: var(--space-md);
+  max-width: 100%;
+}
+
+.fullWidth {
+  grid-column: 1 / -1;
 }
 
 .inputGroup input, .inputGroup select, .inputGroup textarea {
@@ -314,4 +318,8 @@
 @media (max-width: 900px) {
   .portalBody { grid-template-columns: 1fr; }
   .portalCard { padding: var(--space-md); }
+}
+
+@media (max-width: 600px) {
+  .quoteForm { grid-template-columns: 1fr; }
 }
