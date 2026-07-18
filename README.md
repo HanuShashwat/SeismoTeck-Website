@@ -1248,7 +1248,8 @@ For licensing inquiries, collaboration requests, or permission to use any part o
 
 <div align="center">
 
-**Built for [SeismoTeck](https://seismoteck.com) — Pioneering Earthquake Forecasting Through Advanced Seismic Research • Crafted with 🧡 by [Gaprio Labs](https://hello.gaprio.in).**
+**Built for [SeismoTeck](https://seismoteck.com) — Pioneering Earthquake Forecasting Through Advanced Seismic Research.**<br>
+**Crafted with 🧡 by [Gaprio Labs](https://hello.gaprio.in).**
 
 *SASVC SeismoTech Software India Private Limited, Patna, Bihar, India*
 
