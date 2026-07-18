@@ -1,25 +1,11 @@
 "use client";
 
-import React, { useState, useRef, MouseEvent } from "react";
+import React, { useState } from "react";
 import styles from "./ProductMatrix.module.css";
+import SectionHeading from "@/components/SectionHeading/SectionHeading";
 
 export default function ProductMatrix() {
   const [activeTab, setActiveTab] = useState(0);
-  const stageRef = useRef<HTMLDivElement>(null);
-
-  const handleMouseMove = (e: MouseEvent<HTMLDivElement>) => {
-    if (!stageRef.current) return;
-    const xVal = (window.innerWidth / 2 - e.clientX) / 45;
-    const yVal = (window.innerHeight / 2 - e.clientY) / 45;
-    stageRef.current.style.transform = `rotateY(${-xVal}deg) rotateX(${yVal}deg)`;
-    stageRef.current.style.transition = 'none';
-  };
-
-  const handleMouseLeave = () => {
-    if (!stageRef.current) return;
-    stageRef.current.style.transition = 'transform 0.6s cubic-bezier(0.25, 1, 0.2, 1)';
-    stageRef.current.style.transform = 'rotateY(0deg) rotateX(0deg)';
-  };
 
   const handleFormSubmit = (e: React.FormEvent) => {
     e.preventDefault();
@@ -27,13 +13,10 @@ export default function ProductMatrix() {
   };
 
   return (
-    <section className={styles.containerWrapper} onMouseMove={handleMouseMove} onMouseLeave={handleMouseLeave}>
-      <div className={styles.portalStage} ref={stageRef}>
+    <section className={styles.section}>
+      <div className={styles.containerWrapper}>
         <div className={styles.portalCard}>
-          <header className={styles.portalHeader}>
-            <div className={styles.brandLogoIcon}>अ</div>
-            <h2 className={styles.brandTitle}>Global Seismic Solution</h2>
-          </header>
+          <SectionHeading title="Global Seismic Solution" />
 
           <div className={styles.portalBody}>
             {/* Task Menu */}
