@@ -1,0 +1,348 @@
+.containerWrapper {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  perspective: 1200px;
+  overflow-x: hidden;
+  padding: var(--space-xl) var(--space-md);
+}
+
+.portalStage {
+  width: 100%;
+  max-width: var(--max-width);
+  z-index: 2;
+  transform-style: preserve-3d;
+  will-change: transform;
+}
+
+.portalCard {
+  background: rgba(10, 14, 23, 0.4);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  border: 1px solid var(--color-border-glow);
+  border-radius: var(--border-radius-xl);
+  padding: var(--space-xl);
+  box-shadow: 0 35px 70px rgba(0, 0, 0, 0.7), inset 0 1px 1px rgba(255, 255, 255, 0.05);
+  transform-style: preserve-3d;
+}
+
+.portalHeader {
+  text-align: center;
+  margin-bottom: var(--space-xl);
+  transform: translateZ(60px);
+}
+
+.brandLogoIcon {
+  font-size: 3.5rem;
+  color: var(--color-accent-primary);
+  font-weight: bold;
+  text-shadow: var(--glow-cyan-strong);
+}
+
+.brandTitle {
+  font-size: var(--fs-h2);
+  letter-spacing: 3px;
+  text-transform: uppercase;
+  background: linear-gradient(135deg, #fff, var(--color-accent-secondary));
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  font-family: var(--font-heading);
+}
+
+.portalBody {
+  display: grid;
+  grid-template-columns: 280px 1fr;
+  gap: var(--space-xl);
+  transform-style: preserve-3d;
+}
+
+.taskMenu {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-sm);
+  transform: translateZ(40px);
+}
+
+.menuBtn {
+  background: rgba(10, 14, 23, 0.5);
+  border: 1px solid rgba(0, 229, 255, 0.1);
+  color: var(--color-text-secondary);
+  padding: var(--space-md) var(--space-lg);
+  border-radius: var(--border-radius-md);
+  text-align: left;
+  font-size: var(--fs-small);
+  font-weight: 600;
+  cursor: pointer;
+  letter-spacing: 0.5px;
+  transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
+  font-family: var(--font-body);
+}
+
+.menuBtn:hover, .activeBtn {
+  color: var(--color-bg-primary);
+  background: var(--color-accent-primary);
+  border-color: var(--color-accent-primary);
+  box-shadow: var(--glow-cyan);
+  transform: translateX(5px) translateZ(10px);
+}
+
+.contentStage {
+  background: rgba(10, 14, 23, 0.6);
+  border: 1px solid rgba(0, 229, 255, 0.1);
+  border-radius: var(--border-radius-lg);
+  padding: var(--space-xl);
+  min-height: 550px;
+  transform: translateZ(30px);
+  transform-style: preserve-3d;
+}
+
+.contentPanel {
+  animation: fadeIn 0.5s ease forwards;
+  transform-style: preserve-3d;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateZ(-10px); }
+  to { opacity: 1; transform: translateZ(0); }
+}
+
+.panelTitle {
+  font-size: var(--fs-h3);
+  color: var(--color-text-primary);
+  margin-bottom: var(--space-lg);
+  border-bottom: 2px solid rgba(0, 229, 255, 0.2);
+  padding-bottom: var(--space-sm);
+  display: flex;
+  align-items: center;
+  gap: var(--space-sm);
+  font-family: var(--font-heading);
+}
+
+.panelTitle::before {
+  content: '■';
+  color: var(--color-accent-primary);
+  font-size: 1.2rem;
+}
+
+.panelDesc {
+  color: var(--color-text-secondary);
+  line-height: 1.7;
+  margin-bottom: var(--space-lg);
+}
+
+/* IoT Grid */
+.iotGrid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: var(--space-md);
+  margin-top: var(--space-md);
+}
+
+.iotCard {
+  background: rgba(10, 14, 23, 0.5);
+  border: 1px solid rgba(0, 229, 255, 0.1);
+  padding: var(--space-lg);
+  border-radius: var(--border-radius-md);
+  text-align: center;
+}
+
+.iotCard h4 {
+  color: var(--color-text-primary);
+}
+
+.statusWrapper {
+  margin: var(--space-sm) 0;
+  color: var(--color-text-secondary);
+}
+
+.statusDot {
+  width: 10px;
+  height: 10px;
+  background: var(--color-accent-success);
+  border-radius: 50%;
+  display: inline-block;
+  box-shadow: 0 0 10px var(--color-accent-success);
+  margin-right: 8px;
+}
+
+.iotCard small {
+  color: var(--color-text-muted);
+}
+
+/* Satellite Table */
+.satelliteTable {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: var(--space-md);
+}
+
+.satelliteTable th, .satelliteTable td {
+  padding: var(--space-sm) var(--space-md);
+  text-align: left;
+  border-bottom: 1px solid rgba(0, 229, 255, 0.1);
+  color: var(--color-text-secondary);
+}
+
+.satelliteTable th {
+  color: var(--color-accent-secondary);
+  background: rgba(10, 14, 23, 0.4);
+  font-family: var(--font-heading);
+}
+
+/* Blueprint */
+.blueprintContainer {
+  border: 2px dashed rgba(0, 229, 255, 0.2);
+  background: radial-gradient(circle, rgba(10, 14, 23, 0.6) 0%, transparent 80%);
+  height: 280px;
+  border-radius: var(--border-radius-md);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  overflow: hidden;
+  margin-top: var(--space-md);
+}
+
+.wireframeBox {
+  width: 120px;
+  height: 120px;
+  border: 2px solid var(--color-accent-primary);
+  position: relative;
+  transform: rotateX(60deg) rotateZ(45deg);
+  transform-style: preserve-3d;
+  animation: cubeRotate 10s linear infinite;
+}
+
+.wireframeBox::before, .wireframeBox::after {
+  content: '';
+  position: absolute;
+  width: 100%; height: 100%;
+  border: 2px solid var(--color-accent-primary);
+  left: 0; top: 0;
+}
+
+.wireframeBox::before { transform: translateZ(60px); }
+.wireframeBox::after { transform: translateZ(-60px); }
+
+@keyframes cubeRotate {
+  0% { transform: rotateX(60deg) rotateZ(0deg); }
+  100% { transform: rotateX(60deg) rotateZ(360deg); }
+}
+
+.blueprintLabel {
+  position: absolute;
+  bottom: 15px;
+  font-size: 0.8rem;
+  color: var(--color-accent-secondary);
+  letter-spacing: 1px;
+}
+
+/* List */
+.mechanicsList {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-md);
+  margin-top: var(--space-md);
+}
+
+.mechanicsList li {
+  background: rgba(0, 229, 255, 0.05);
+  padding: var(--space-md);
+  border-radius: var(--border-radius-sm);
+  color: var(--color-text-secondary);
+  line-height: 1.5;
+}
+
+.mechanicsList strong {
+  color: var(--color-accent-primary);
+}
+
+/* Timeline */
+.timeline {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-lg);
+  margin-top: var(--space-lg);
+}
+
+.timelineStep {
+  display: flex;
+  gap: var(--space-lg);
+}
+
+.stepNum {
+  background: var(--color-accent-primary);
+  color: var(--color-bg-primary);
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-weight: bold;
+  flex-shrink: 0;
+}
+
+.stepTitle {
+  color: var(--color-text-primary);
+  font-size: 1.05rem;
+  margin-bottom: var(--space-xs);
+}
+
+.stepDesc {
+  color: var(--color-text-muted);
+  font-size: 0.9rem;
+  line-height: 1.5;
+}
+
+/* Form */
+.quoteForm {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-md);
+  max-width: 500px;
+  margin-top: var(--space-md);
+}
+
+.inputGroup input, .inputGroup select, .inputGroup textarea {
+  width: 100%;
+  background: rgba(10, 14, 23, 0.8);
+  border: 1px solid rgba(0, 229, 255, 0.2);
+  padding: var(--space-md);
+  color: var(--color-text-primary);
+  border-radius: var(--border-radius-sm);
+  font-size: 0.95rem;
+  font-family: var(--font-body);
+}
+
+.inputGroup input:focus, .inputGroup select:focus, .inputGroup textarea:focus {
+  outline: none;
+  border-color: var(--color-accent-primary);
+  box-shadow: var(--glow-cyan);
+}
+
+.submitBtn {
+  background: var(--gradient-accent);
+  color: var(--color-bg-primary);
+  border: none;
+  padding: var(--space-md);
+  border-radius: var(--border-radius-sm);
+  font-weight: 700;
+  font-size: 1rem;
+  cursor: pointer;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  transition: all 0.3s ease;
+}
+
+.submitBtn:hover {
+  transform: translateY(-2px);
+  box-shadow: var(--glow-cyan-strong);
+}
+
+@media (max-width: 900px) {
+  .portalBody { grid-template-columns: 1fr; }
+  .portalCard { padding: var(--space-md); }
+}

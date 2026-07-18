@@ -7,6 +7,7 @@ import SectionHeading from "@/components/SectionHeading/SectionHeading";
 import Card from "@/components/Card/Card";
 import StatCounter from "@/components/StatCounter/StatCounter";
 import VideoEmbed from "@/components/VideoEmbed/VideoEmbed";
+import ProductMatrix from "@/components/ProductMatrix/ProductMatrix";
 import NewsCard from "@/components/NewsCard/NewsCard";
 import ScrollReveal from "@/components/ScrollReveal/ScrollReveal";
 import styles from "./page.module.css";
@@ -19,6 +20,9 @@ export default function Home() {
 
       {/* Section 2: News Ticker */}
       <NewsTicker />
+
+      {/* Section 2.5: Product Matrix (Client Request) */}
+      <ProductMatrix />
 
       {/* Section 3: Key Innovations Grid */}
       <section className={styles.section}>
