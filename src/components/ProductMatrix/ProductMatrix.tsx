@@ -172,7 +172,7 @@ export default function ProductMatrix() {
                     <div className={styles.inputGroup}>
                       <input type="email" placeholder="Corporate Contact Email" required />
                     </div>
-                    <div className={styles.inputGroup}>
+                    <div className={`${styles.inputGroup} ${styles.fullWidth}`}>
                       <select required defaultValue="">
                         <option value="" disabled>Select Primary Deployment Matrix</option>
                         <option value="regional">Regional Land-Base Array</option>
@@ -180,10 +180,10 @@ export default function ProductMatrix() {
                         <option value="custom">Custom Hybrid Infrastructure Solutions</option>
                       </select>
                     </div>
-                    <div className={styles.inputGroup}>
+                    <div className={`${styles.inputGroup} ${styles.fullWidth}`}>
                       <textarea rows={4} placeholder="Briefly specify deployment zone metrics or special engineering requests..."></textarea>
                     </div>
-                    <button type="submit" className={styles.submitBtn}>Generate Enterprise Quote</button>
+                    <button type="submit" className={`${styles.submitBtn} ${styles.fullWidth}`}>Generate Enterprise Quote</button>
                   </form>
                 </section>
               )}
