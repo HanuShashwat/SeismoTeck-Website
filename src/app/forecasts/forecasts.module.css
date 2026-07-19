@@ -9,54 +9,71 @@
   padding: 0 var(--space-md);
 }
 
-/* Header Banner */
+/* =========================================
+   1. Header Banner
+   ========================================= */
 .headerBanner {
   background: var(--gradient-hero);
-  padding: var(--space-3xl) 0;
+  padding: var(--space-3xl) var(--space-md);
   text-align: center;
   border-bottom: 1px solid var(--color-border);
   margin-bottom: var(--space-2xl);
 }
 
 .bannerTitle {
-  font-size: var(--fs-h1);
+  /* Fluid typography for smooth scaling */
+  font-size: clamp(2.5rem, 6vw, 4rem);
   color: var(--color-text-primary);
-  margin-bottom: var(--space-xs);
+  margin-bottom: var(--space-sm);
   text-shadow: var(--glow-cyan);
+  line-height: 1.1;
 }
 
 .bannerSubtext {
-  font-size: var(--fs-body-lg);
+  font-size: clamp(1rem, 2.5vw, 1.25rem);
   color: var(--color-text-secondary);
   max-width: 600px;
   margin: 0 auto;
+  line-height: 1.6;
 }
 
-/* Case Study Sections */
+/* =========================================
+   2. Case Study Sections
+   ========================================= */
 .caseStudySection {
   margin-bottom: var(--space-3xl);
-  padding-bottom: var(--space-2xl);
-  border-bottom: 1px dashed var(--color-border);
+  padding-bottom: var(--space-3xl);
+  border-bottom: 1px dashed rgba(var(--accent-primary-rgb), 0.3);
 }
 
 .caseStudySection:last-of-type {
   border-bottom: none;
+  margin-bottom: 0;
+  padding-bottom: 0;
 }
 
 .contentGrid {
   display: grid;
   grid-template-columns: 1fr 1fr;
-  gap: var(--space-xl);
-  align-items: flex-start;
+  gap: var(--space-2xl);
+  align-items: center; /* Center align for a better visual balance */
 }
 
+/* Premium Image Wrapper */
 .imageWrapper {
   position: relative;
   aspect-ratio: 16 / 9;
   border-radius: var(--border-radius-lg);
   overflow: hidden;
   border: 1px solid var(--color-border);
-  box-shadow: var(--glow-cyan);
+  box-shadow: var(--shadow-premium, 0 10px 30px rgba(0,0,0,0.2));
+  transition: transform var(--transition-base), box-shadow var(--transition-base);
+}
+
+.imageWrapper:hover {
+  transform: translateY(-5px);
+  box-shadow: var(--glow-cyan-strong);
+  border-color: rgba(var(--accent-primary-rgb), 0.5);
 }
 
 .image {
@@ -68,49 +85,109 @@
   flex-direction: column;
   gap: var(--space-md);
   color: var(--color-text-secondary);
-  line-height: 1.6;
+  line-height: 1.7;
   font-size: var(--fs-body-lg);
 }
 
+/* Upgraded to a Glassmorphic Data Panel */
 .dataList {
   list-style: none;
   display: flex;
   flex-direction: column;
-  gap: var(--space-sm);
-  background-color: var(--color-surface);
-  padding: var(--space-md);
+  gap: 12px;
+  background: rgba(15, 23, 42, 0.4); /* Deep cinematic background */
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  padding: var(--space-lg);
   border-radius: var(--border-radius-md);
-  border: 1px solid var(--color-border);
+  border: 1px solid rgba(var(--accent-primary-rgb), 0.15);
+  box-shadow: inset 0 0 20px rgba(0, 0, 0, 0.2);
 }
 
 .dataList li {
   color: var(--color-text-secondary);
+  font-size: 0.95rem;
+  display: flex;
+  align-items: flex-start;
+  gap: 8px;
+}
+
+/* Custom glowing bullet point */
+.dataList li::before {
+  content: '▹';
+  color: var(--color-accent-primary);
+  text-shadow: var(--glow-cyan);
+  font-weight: bold;
 }
 
 .dataList strong {
-  color: var(--color-accent-primary);
+  color: var(--color-accent-secondary); /* Makes the data pop */
+  font-weight: 600;
+  letter-spacing: 0.02em;
 }
 
-/* Disclaimer */
+/* =========================================
+   3. Disclaimer
+   ========================================= */
 .disclaimerSection {
-  background-color: var(--color-bg-secondary);
-  padding: var(--space-xl) 0;
-  border-top: 1px solid var(--color-border);
-  margin-top: var(--space-xl);
+  background-color: var(--color-bg-primary); /* Blend seamlessly */
+  padding: var(--space-xl) var(--space-md);
+  border-top: 1px solid rgba(var(--accent-primary-rgb), 0.2);
+  margin-top: var(--space-3xl);
 }
 
 .disclaimerText {
   color: var(--color-text-muted);
-  font-size: var(--fs-small);
+  font-size: 0.85rem;
   text-align: center;
   font-style: italic;
   max-width: 800px;
   margin: 0 auto;
+  line-height: 1.6;
+  opacity: 0.8;
 }
 
-/* Responsive */
-@media (max-width: 768px) {
+/* =========================================
+   Responsive Breakpoints
+   ========================================= */
+
+/* Tablet (Screens 1024px and below) */
+@media (max-width: 1024px) {
   .contentGrid {
+    /* Stack at tablet size so text isn't squeezed into a narrow column */
     grid-template-columns: 1fr;
+    gap: var(--space-xl);
+    max-width: 700px;
+    margin: 0 auto;
+  }
+}
+
+/* Mobile (Screens 600px and below) */
+@media (max-width: 600px) {
+  .headerBanner {
+    padding: var(--space-2xl) var(--space-md);
+    margin-bottom: var(--space-xl);
+  }
+
+  .caseStudySection {
+    margin-bottom: var(--space-2xl);
+    padding-bottom: var(--space-2xl);
+  }
+
+  .textContent {
+    font-size: 1rem; /* Better reading size for phones */
+  }
+
+  .dataList {
+    padding: var(--space-md);
+  }
+
+  .dataList li {
+    font-size: 0.9rem;
+  }
+
+  .disclaimerSection {
+    margin-top: var(--space-xl);
+    padding: var(--space-lg) var(--space-sm);
   }
 }

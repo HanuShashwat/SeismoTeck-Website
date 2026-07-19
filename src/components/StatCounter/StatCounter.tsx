@@ -16,7 +16,7 @@ export default function StatCounter() {
           if (ref.current) observer.unobserve(ref.current);
         }
       },
-      { threshold: 0.5 }
+      { threshold: 0.2 } // Trigger a bit earlier so it's ready when scrolling
     );
 
     const currentRef = ref.current;

@@ -1,41 +1,54 @@
+/* =========================================
+   Premium Form Container
+   ========================================= */
 .form {
   display: flex;
   flex-direction: column;
   gap: var(--space-md);
-  background-color: var(--color-bg-card);
-  padding: var(--space-lg);
-  border-radius: var(--border-radius-lg);
-  border: 1px solid var(--color-border);
+  
+  /* Upgraded to a sleek cinematic glass card */
+  background: rgba(15, 23, 42, 0.4); 
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  padding: var(--space-xl);
+  border-radius: var(--border-radius-xl);
+  border: 1px solid rgba(255, 255, 255, 0.05);
+  box-shadow: 0 10px 40px rgba(0, 0, 0, 0.15);
 }
 
 .inputGroup {
   display: flex;
   flex-direction: column;
-  gap: var(--space-xs);
+  gap: 8px; /* Tighter gap between label and input for better association */
 }
 
 .label {
-  font-size: var(--fs-small);
+  font-size: 0.9rem;
   color: var(--color-text-secondary);
-  font-weight: 500;
+  font-weight: 600;
+  letter-spacing: 0.02em;
 }
 
+/* =========================================
+   Inputs & Textareas
+   ========================================= */
 .input,
 .textarea {
   width: 100%;
-  background-color: var(--color-surface);
+  background-color: rgba(0, 0, 0, 0.2); /* Deep inset feel */
   border: 1px solid var(--color-border);
   border-radius: var(--border-radius-sm);
-  padding: var(--space-sm);
+  padding: 14px var(--space-sm);
   color: var(--color-text-primary);
   font-family: var(--font-body);
-  font-size: var(--fs-body);
-  transition: border-color var(--transition-fast), box-shadow var(--transition-fast);
+  font-size: 0.95rem;
+  transition: all var(--transition-fast);
 }
 
 .input:focus,
 .textarea:focus {
   outline: none;
+  background-color: rgba(0, 0, 0, 0.4);
   border-color: var(--color-accent-primary);
   box-shadow: var(--glow-cyan);
 }
@@ -43,34 +56,69 @@
 .input::placeholder,
 .textarea::placeholder {
   color: var(--color-text-muted);
+  opacity: 0.6;
 }
 
+/* =========================================
+   Buttons
+   ========================================= */
 .submitBtn {
-  background-color: var(--color-accent-primary);
-  color: var(--color-bg-primary);
+  background: var(--gradient-accent); /* Make it match your primary buttons */
+  color: #ffffff;
   border: none;
-  border-radius: var(--border-radius-sm);
-  padding: var(--space-sm) var(--space-lg);
+  border-radius: 50px;
+  padding: 14px var(--space-xl);
   font-family: var(--font-body);
-  font-size: var(--fs-body);
-  font-weight: 600;
+  font-size: 0.95rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 1.5px;
   cursor: pointer;
-  transition: background-color var(--transition-fast), transform var(--transition-fast), box-shadow var(--transition-fast);
+  transition: all 0.3s cubic-bezier(0.2, 0.8, 0.2, 1);
   margin-top: var(--space-sm);
-  align-self: flex-start;
+  align-self: flex-start; /* Keeps it left-aligned on desktop */
+  box-shadow: 0 4px 15px rgba(var(--accent-primary-rgb), 0.3);
 }
 
 .submitBtn:hover:not(:disabled) {
-  background-color: var(--color-accent-secondary);
-  transform: translateY(-2px);
+  transform: translateY(-3px) scale(1.02);
   box-shadow: var(--glow-cyan-strong);
 }
 
 .submitBtn:disabled {
-  opacity: 0.7;
+  background: var(--color-border);
+  box-shadow: none;
+  opacity: 0.5;
   cursor: not-allowed;
+  transform: none;
 }
 
+/* Fallback button class (if used elsewhere in the component) */
+.btn {
+  background: var(--gradient-accent);
+  color: #ffffff;
+  border: none;
+  border-radius: 50px;
+  padding: var(--space-sm) var(--space-lg);
+  font-family: var(--font-body);
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 1.5px;
+  font-size: var(--fs-body);
+  cursor: pointer;
+  transition: all 0.3s ease;
+  margin-top: var(--space-md);
+  box-shadow: 0 4px 15px rgba(var(--accent-primary-rgb), 0.3);
+}
+
+.btn:hover {
+  transform: scale(1.05) translateY(-3px);
+  box-shadow: var(--glow-cyan-strong);
+}
+
+/* =========================================
+   Success Message State
+   ========================================= */
 .successMessage {
   display: flex;
   flex-direction: column;
@@ -78,38 +126,58 @@
   justify-content: center;
   text-align: center;
   gap: var(--space-md);
-  background-color: var(--color-bg-card);
-  padding: var(--space-3xl) var(--space-lg);
-  border-radius: var(--border-radius-lg);
-  border: 1px solid var(--color-border);
+  
+  /* Matches the form's premium glass look */
+  background: rgba(15, 23, 42, 0.4); 
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  padding: var(--space-3xl) var(--space-xl);
+  border-radius: var(--border-radius-xl);
+  border: 1px solid rgba(16, 185, 129, 0.2); /* Subtle success green border */
+  box-shadow: 0 0 30px rgba(16, 185, 129, 0.05);
 }
 
 .successIcon {
-  width: 64px;
-  height: 64px;
+  width: 72px;
+  height: 72px;
   border-radius: 50%;
-  background-color: rgba(16, 185, 129, 0.1);
+  background-color: rgba(16, 185, 129, 0.15);
   color: var(--color-accent-success);
   display: flex;
   align-items: center;
   justify-content: center;
-  font-size: 32px;
-  margin-bottom: var(--space-sm);
+  font-size: 36px;
+  margin-bottom: var(--space-xs);
+  box-shadow: 0 0 20px rgba(16, 185, 129, 0.2);
 }
 
-.btn {
-  background-color: transparent;
-  color: var(--color-accent-primary);
-  border: 1px solid var(--color-accent-primary);
-  border-radius: var(--border-radius-sm);
-  padding: var(--space-sm) var(--space-lg);
-  font-family: var(--font-body);
-  font-size: var(--fs-body);
-  cursor: pointer;
-  transition: all var(--transition-fast);
-  margin-top: var(--space-md);
-}
+/* =========================================
+   Responsive Breakpoints (Mobile Fixes)
+   ========================================= */
 
-.btn:hover {
-  background-color: rgba(0, 229, 255, 0.1);
+@media (max-width: 600px) {
+  .form {
+    padding: var(--space-lg) var(--space-md); /* Reduce padding so it fits screens */
+    border-radius: var(--border-radius-lg);
+  }
+
+  .submitBtn {
+    /* Critical Mobile UX Fix: Full width thumb-friendly button */
+    width: 100%;
+    align-self: stretch;
+    text-align: center;
+    padding: 16px; 
+    margin-top: var(--space-md);
+  }
+
+  .successMessage {
+    padding: var(--space-2xl) var(--space-md);
+    border-radius: var(--border-radius-lg);
+  }
+
+  .successIcon {
+    width: 60px;
+    height: 60px;
+    font-size: 28px;
+  }
 }

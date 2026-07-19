@@ -5,10 +5,13 @@
 
 .section {
   padding: var(--space-section) 0;
+  position: relative;
 }
 
 .bgSecondary {
   background-color: var(--color-bg-secondary);
+  border-top: 1px solid var(--color-border);
+  border-bottom: 1px solid var(--color-border);
 }
 
 .container {
@@ -17,59 +20,73 @@
   padding: 0 var(--space-md);
 }
 
-/* Header Banner */
+/* =========================================
+   1. Header Banner
+   ========================================= */
 .headerBanner {
   position: relative;
-  height: 40vh;
-  min-height: 300px;
+  height: 45vh;
+  min-height: 350px;
   display: flex;
   align-items: center;
   justify-content: center;
   text-align: center;
   border-bottom: 1px solid var(--color-border);
+  overflow: hidden;
 }
 
 .bannerBackground {
   position: absolute;
   inset: 0;
   z-index: 0;
-  overflow: hidden;
 }
 
 .bannerImage {
   object-fit: cover;
-  opacity: 0.15;
+  opacity: 0.25; /* Slightly increased for a better cinematic feel */
 }
 
+/* Premium gradient fade to blend the image perfectly into the background */
 .bannerOverlay {
   position: absolute;
   inset: 0;
-  background: linear-gradient(to bottom, var(--color-bg-primary), transparent, var(--color-bg-primary));
+  background: linear-gradient(
+    to bottom, 
+    rgba(var(--bg-primary-rgb), 0.8) 0%, 
+    transparent 50%, 
+    var(--color-bg-primary) 100%
+  );
 }
 
 .bannerContent {
   position: relative;
   z-index: 1;
   padding: 0 var(--space-md);
+  max-width: 800px;
 }
 
 .bannerTitle {
-  font-size: var(--fs-h1);
+  /* Fluid typography: scales smoothly between mobile and desktop */
+  font-size: clamp(2.5rem, 6vw, 4rem);
   color: var(--color-text-primary);
-  margin-bottom: var(--space-xs);
-  text-shadow: var(--glow-cyan);
+  margin-bottom: var(--space-sm);
+  text-shadow: var(--glow-cyan-strong);
+  line-height: 1.1;
 }
 
 .bannerSubtext {
-  font-size: var(--fs-body-lg);
+  font-size: clamp(1rem, 2.5vw, 1.25rem);
   color: var(--color-text-secondary);
   max-width: 600px;
   margin: 0 auto;
+  line-height: 1.6;
 }
 
-/* Text Content (Company Overview) */
+/* =========================================
+   2. Text Content (Company Overview)
+   ========================================= */
 .textContent {
-  max-width: 800px;
+  max-width: 750px; /* Optimal reading width so eyes don't get tired */
   margin: 0 auto;
   display: flex;
   flex-direction: column;
@@ -80,13 +97,31 @@
 }
 
 .heading {
-  font-size: var(--fs-h3);
+  font-size: var(--fs-h2);
   color: var(--color-text-primary);
-  margin-bottom: var(--space-sm);
+  margin-bottom: var(--space-md);
   text-align: center;
+  position: relative;
+  padding-bottom: var(--space-sm);
 }
 
-/* Founder Grid */
+/* Subtle accent line under the heading */
+.heading::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 60px;
+  height: 3px;
+  background: var(--color-accent-primary);
+  border-radius: 2px;
+  box-shadow: var(--glow-cyan);
+}
+
+/* =========================================
+   3. Founder Grid
+   ========================================= */
 .founderGrid {
   display: grid;
   grid-template-columns: 1fr 1fr;
@@ -96,15 +131,25 @@
 
 .founderImageWrapper {
   position: relative;
-  aspect-ratio: 4 / 3;
-  border-radius: var(--border-radius-lg);
+  aspect-ratio: 4 / 5; /* Taller, more professional portrait ratio for desktop */
+  border-radius: var(--border-radius-xl);
   overflow: hidden;
-  border: 1px solid var(--color-border);
-  box-shadow: var(--glow-cyan);
+  border: 1px solid rgba(var(--accent-primary-rgb), 0.3);
+  box-shadow: var(--shadow-premium, 0 20px 40px rgba(0,0,0,0.3));
+}
+
+/* Inner glow for the portrait */
+.founderImageWrapper::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  box-shadow: inset 0 0 20px rgba(255, 255, 255, 0.05);
+  pointer-events: none;
 }
 
 .founderImage {
   object-fit: cover;
+  object-position: top center; /* Ensures the face isn't cropped out on resize */
 }
 
 .founderBio {
@@ -112,26 +157,75 @@
   flex-direction: column;
   gap: var(--space-md);
   color: var(--color-text-secondary);
-  line-height: 1.6;
+  line-height: 1.7;
 }
 
 .founderName {
-  font-size: var(--fs-h2);
+  font-size: clamp(2rem, 4vw, 2.75rem);
   color: var(--color-text-primary);
   margin: 0;
+  line-height: 1.1;
 }
 
 .founderTitle {
   font-size: var(--fs-body-lg);
   color: var(--color-accent-primary);
-  margin: 0 0 var(--space-sm) 0;
-  font-weight: 500;
+  margin: 0;
+  font-weight: 600;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
 }
 
-/* Responsive */
-@media (max-width: 900px) {
+
+/* =========================================
+   Responsive Breakpoints
+   ========================================= */
+
+/* Tablet (Screens 1024px and below) */
+@media (max-width: 1024px) {
   .founderGrid {
     grid-template-columns: 1fr;
     gap: var(--space-xl);
+    max-width: 700px;
+    margin: 0 auto;
+  }
+
+  .founderImageWrapper {
+    aspect-ratio: 16 / 9; /* Switch to landscape so it doesn't take up the whole screen height */
+    max-width: 100%;
+  }
+  
+  .founderBio {
+    text-align: center; /* Center text on tablet for better balance */
+    align-items: center;
+  }
+}
+
+/* Mobile (Screens 600px and below) */
+@media (max-width: 600px) {
+  .headerBanner {
+    min-height: 300px;
+    height: auto;
+    padding: var(--space-2xl) 0;
+  }
+
+  .textContent {
+    font-size: 1rem; /* Standardize font size for mobile reading */
+    text-align: justify; /* Or 'left' depending on preference */
+    hyphens: auto;
+  }
+
+  .founderImageWrapper {
+    aspect-ratio: 4 / 3; /* Slightly squarer on phones for better framing */
+    border-radius: var(--border-radius-lg);
+  }
+
+  .founderBio {
+    text-align: left; /* Switch back to left-aligned for easier reading on narrow screens */
+    align-items: flex-start;
+  }
+
+  .founderTitle {
+    font-size: 0.9rem;
   }
 }

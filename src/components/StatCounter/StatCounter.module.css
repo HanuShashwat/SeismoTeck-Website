@@ -1,7 +1,5 @@
 .section {
-  background-color: var(--color-bg-secondary);
-  border-top: 1px solid var(--color-border);
-  border-bottom: 1px solid var(--color-border);
+  background: var(--color-bg-primary); /* Blend seamlessly with the main bg */
   padding: var(--space-xl) 0;
   position: relative;
   overflow: hidden;
@@ -20,14 +18,53 @@
   text-align: center;
 }
 
+/* Premium Glassmorphic Cards */
 .statItem {
   display: flex;
   flex-direction: column;
   align-items: center;
-  gap: var(--space-xs);
+  justify-content: center;
+  gap: 12px;
+  padding: var(--space-xl) var(--space-md);
+  
+  /* Initial Animation State */
   opacity: 0;
-  transform: translateY(20px);
-  transition: opacity 600ms ease, transform 600ms ease;
+  transform: translateY(30px);
+  transition: opacity 0.6s cubic-bezier(0.2, 0.8, 0.2, 1), 
+              transform 0.6s cubic-bezier(0.2, 0.8, 0.2, 1),
+              box-shadow 0.3s ease, border-color 0.3s ease;
+  
+  /* Glass UI Setup */
+  background: rgba(15, 23, 42, 0.4); 
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border: 1px solid rgba(255, 255, 255, 0.05);
+  border-radius: var(--border-radius-lg);
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15);
+  position: relative;
+}
+
+/* Subtle premium top highlight line */
+.statItem::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 1px;
+  background: linear-gradient(90deg, transparent, rgba(var(--accent-primary-rgb), 0.5), transparent);
+  opacity: 0;
+  transition: opacity 0.4s ease;
+}
+
+.statItem:hover::before {
+  opacity: 1;
+}
+
+.statItem:hover {
+  transform: translateY(-5px);
+  box-shadow: var(--glow-cyan);
+  border-color: rgba(var(--accent-primary-rgb), 0.3);
 }
 
 .statItem.visible {
@@ -35,31 +72,64 @@
   transform: translateY(0);
 }
 
+/* Gradient Text for the Numbers */
 .number {
   font-family: var(--font-heading);
-  font-size: var(--fs-h1);
+  font-size: var(--fs-display);
   font-weight: 700;
-  color: var(--color-accent-primary);
-  text-shadow: var(--glow-cyan);
+  line-height: 1;
+  
+  background: var(--gradient-accent);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  filter: drop-shadow(0 0 15px rgba(var(--accent-primary-rgb), 0.4));
 }
 
 .label {
-  font-size: var(--fs-body);
+  font-size: 0.95rem;
   color: var(--color-text-secondary);
   text-transform: uppercase;
-  letter-spacing: 0.05em;
+  letter-spacing: 0.1em;
   font-weight: 600;
 }
 
-@media (max-width: 900px) {
+/* =========================================
+   Responsive Breakpoints (Mobile UI/UX Fix)
+   ========================================= */
+
+@media (max-width: 1024px) {
   .grid {
     grid-template-columns: repeat(2, 1fr);
-    gap: var(--space-xl);
+    gap: var(--space-md);
+    max-width: 700px;
+    margin: 0 auto;
+  }
+  
+  .number {
+    font-size: var(--fs-h1);
   }
 }
 
-@media (max-width: 480px) {
+@media (max-width: 600px) {
   .grid {
-    grid-template-columns: 1fr;
+    /* STRICTLY KEEP 2 COLUMNS ON MOBILE to save vertical space */
+    grid-template-columns: repeat(2, 1fr);
+    gap: 12px; 
+  }
+  
+  .statItem {
+    padding: var(--space-md) var(--space-sm);
+    gap: 8px;
+    border-radius: var(--border-radius-md);
+  }
+
+  .number {
+    font-size: 2rem; /* Shrink drastically so it fits in a 2-column mobile view */
+  }
+
+  .label {
+    font-size: 0.75rem; 
+    letter-spacing: 0.05em;
   }
 }
