@@ -32,7 +32,7 @@
 .overlay {
   position: absolute;
   inset: 0;
-  background: radial-gradient(circle, transparent 70%, rgba(10, 14, 23, 0.4) 100%);
+  background: radial-gradient(circle, transparent 70%, rgba(var(--bg-primary-rgb), 0.4) 100%);
   pointer-events: none;
 }
 
@@ -54,3 +54,4 @@
   font-weight: 500;
   margin: 0;
 }
+

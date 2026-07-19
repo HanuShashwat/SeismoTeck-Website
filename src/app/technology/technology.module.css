@@ -5,10 +5,13 @@
 
 .section {
   padding: var(--space-section) 0;
+  position: relative;
 }
 
 .bgSecondary {
   background-color: var(--color-bg-secondary);
+  border-top: 1px solid rgba(var(--accent-primary-rgb), 0.1);
+  border-bottom: 1px solid rgba(var(--accent-primary-rgb), 0.1);
 }
 
 .container {
@@ -17,32 +20,40 @@
   padding: 0 var(--space-md);
 }
 
-/* Header Banner */
+/* =========================================
+   1. Header Banner
+   ========================================= */
 .headerBanner {
   background: var(--gradient-hero);
-  padding: var(--space-3xl) 0;
+  padding: var(--space-3xl) var(--space-md);
   text-align: center;
   border-bottom: 1px solid var(--color-border);
 }
 
 .bannerTitle {
-  font-size: var(--fs-h1);
+  /* Fluid typography: scales beautifully across all form factors */
+  font-size: clamp(2.5rem, 6vw, 4rem);
   color: var(--color-text-primary);
-  margin-bottom: var(--space-xs);
+  margin-bottom: var(--space-sm);
   text-shadow: var(--glow-cyan);
+  line-height: 1.1;
+  letter-spacing: -0.02em;
 }
 
 .bannerSubtext {
-  font-size: var(--fs-body-lg);
+  font-size: clamp(1rem, 2.5vw, 1.25rem);
   color: var(--color-text-secondary);
   max-width: 600px;
   margin: 0 auto;
+  line-height: 1.6;
 }
 
-/* Feature Grids */
+/* =========================================
+   2. Feature Grids Layout
+   ========================================= */
 .featureGrid {
   display: grid;
-  grid-template-columns: 1fr 1fr;
+  grid-template-columns: repeat(2, 1fr);
   gap: var(--space-2xl);
   align-items: center;
 }
@@ -52,45 +63,71 @@
   flex-direction: column;
   gap: var(--space-md);
   color: var(--color-text-secondary);
-  line-height: 1.6;
+  line-height: 1.7;
 }
 
 .heading {
   font-size: var(--fs-h2);
   color: var(--color-text-primary);
   margin-bottom: var(--space-xs);
+  line-height: 1.2;
 }
 
+/* Premium Feature List (Upgraded from generic bullet dots) */
 .featureList {
   list-style: none;
   display: flex;
   flex-direction: column;
-  gap: var(--space-sm);
-  margin-top: var(--space-xs);
+  gap: 14px;
+  margin-top: var(--space-sm);
 }
 
 .featureList li {
   position: relative;
-  padding-left: var(--space-md);
+  padding-left: var(--space-lg);
+  color: var(--color-text-secondary);
+  font-size: 0.95rem;
+  transition: color var(--transition-fast) ease;
 }
 
 .featureList li::before {
-  content: "•";
+  content: "▹"; /* Sleek geometric pointer */
   position: absolute;
   left: 0;
+  top: 0;
   color: var(--color-accent-primary);
-  font-size: 1.2rem;
-  line-height: 1.2;
+  font-size: 1.1rem;
+  line-height: 1.4;
+  text-shadow: var(--glow-cyan);
 }
 
-/* Images */
-.imageWrapper {
+.featureList li:hover {
+  color: var(--color-text-primary);
+}
+
+/* =========================================
+   3. Image Components & Galleries
+   ========================================= */
+.imageWrapper, 
+.imageWrapperHalf, 
+.dashboardImageWrapper {
   position: relative;
-  aspect-ratio: 4 / 3;
-  border-radius: var(--border-radius-lg);
   overflow: hidden;
-  border: 1px solid var(--color-border);
-  box-shadow: var(--glow-cyan);
+  border: 1px solid rgba(255, 255, 255, 0.05);
+  background: rgba(15, 23, 42, 0.2);
+  transition: transform var(--transition-slow), box-shadow var(--transition-slow), border-color var(--transition-slow);
+}
+
+.imageWrapper {
+  aspect-ratio: 4 / 3;
+  border-radius: var(--border-radius-xl);
+  box-shadow: var(--shadow-premium, 0 10px 30px rgba(0, 0, 0, 0.2));
+}
+
+.imageWrapperHalf {
+  aspect-ratio: 21 / 9;
+  border-radius: var(--border-radius-lg);
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
 }
 
 .imageGallery {
@@ -99,57 +136,110 @@
   gap: var(--space-md);
 }
 
-.imageWrapperHalf {
-  position: relative;
-  aspect-ratio: 21 / 9;
-  border-radius: var(--border-radius-lg);
-  overflow: hidden;
-  border: 1px solid var(--color-border);
-}
-
 .image {
   object-fit: cover;
+  width: 100%;
+  height: 100%;
+  transition: transform 0.6s cubic-bezier(0.2, 0.8, 0.2, 1);
 }
 
-/* Dashboard Grid */
+/* Premium micro-interactions on hover */
+.imageWrapper:hover, 
+.imageWrapperHalf:hover, 
+.dashboardImageWrapper:hover {
+  transform: translateY(-4px);
+  box-shadow: var(--glow-cyan-strong);
+  border-color: rgba(var(--accent-primary-rgb), 0.4);
+}
+
+.imageWrapper:hover .image, 
+.imageWrapperHalf:hover .image, 
+.dashboardImageWrapper:hover .image {
+  transform: scale(1.03);
+}
+
+/* =========================================
+   4. Dashboard Grid Layout
+   ========================================= */
 .dashboardGrid {
   display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: var(--space-lg);
+  grid-template-columns: repeat(2, 1fr);
+  gap: var(--space-xl);
   margin-bottom: var(--space-xl);
 }
 
 .dashboardImageWrapper {
-  position: relative;
   aspect-ratio: 16 / 9;
-  border-radius: var(--border-radius-md);
-  overflow: hidden;
-  border: 1px solid var(--color-border);
+  border-radius: var(--border-radius-lg);
   box-shadow: var(--glow-cyan);
 }
 
 .centerText {
   text-align: center;
-  max-width: 800px;
+  max-width: 750px;
   margin: 0 auto;
   color: var(--color-text-secondary);
-  line-height: 1.6;
+  line-height: 1.7;
   font-size: var(--fs-body-lg);
 }
 
-/* Responsive */
-@media (max-width: 900px) {
+/* =========================================
+   Responsive Breakpoints
+   ========================================= */
+
+/* Tablet & Smaller Desktop Tiers */
+@media (max-width: 1024px) {
   .featureGrid {
+    /* Collapse to single column early to protect text flow from extreme squishing */
     grid-template-columns: 1fr;
-    gap: var(--space-xl);
+    gap: var(--space-2xl);
+    max-width: 650px;
+    margin: 0 auto;
   }
   
   .reverseMobile {
     display: flex;
     flex-direction: column-reverse;
+    gap: var(--space-xl);
   }
   
   .dashboardGrid {
     grid-template-columns: 1fr;
+    gap: var(--space-lg);
+    max-width: 650px;
+    margin: 0 auto var(--space-xl);
+  }
+}
+
+/* Mobile Devices */
+@media (max-width: 600px) {
+  .headerBanner {
+    padding: var(--space-2xl) var(--space-sm);
+  }
+
+  .section {
+    padding: var(--space-xl) 0;
+  }
+
+  .heading {
+    font-size: 1.75rem;
+  }
+
+  .centerText {
+    font-size: 1rem;
+    text-align: left; /* Left align text on small screens for better UI scannability */
+  }
+
+  .imageWrapper {
+    aspect-ratio: 16 / 10; /* Better layout proportions for viewport scaling on narrow displays */
+    border-radius: var(--border-radius-lg);
+  }
+
+  .imageWrapperHalf {
+    aspect-ratio: 16 / 9; /* Drop ultra-wide aspect ratio on mobile screens to preserve image clarity */
+  }
+  
+  .featureList li {
+    font-size: 0.9rem;
   }
 }

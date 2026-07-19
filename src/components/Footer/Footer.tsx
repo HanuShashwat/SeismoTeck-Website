@@ -1,4 +1,5 @@
 import Link from "next/link";
+import Image from "next/image";
 import { NAV_LINKS, COMPANY_INFO } from "../../utils/constants";
 import styles from "./Footer.module.css";
 
@@ -11,7 +12,19 @@ export default function Footer() {
         <div className={styles.grid}>
           {/* Company Info */}
           <div className={styles.column}>
-            <h3 className={styles.brand}>{COMPANY_INFO.brand}</h3>
+            {/* Flex container to put logo and text side-by-side */}
+            <div className={styles.brandContainer}>
+              <Image 
+                src="/logo.png" 
+                alt={`${COMPANY_INFO.brand} Logo`}
+                width={40}  /* Reduced size to a clean icon size */
+                height={40} /* Reduced size to a clean icon size */
+                className={styles.logo}
+                priority
+              />
+              <h3 className={styles.brand}>{COMPANY_INFO.brand}</h3>
+            </div>
+            
             <p className={styles.description}>
               {COMPANY_INFO.name}<br />
               Pioneering earthquake forecast through advanced multi-parametric monitoring.

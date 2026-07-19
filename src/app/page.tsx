@@ -148,21 +148,21 @@ export default function Home() {
       </section>
 
       {/* Section 7: Call to Action / Contact Teaser */}
-      <section className={`${styles.section} ${styles.ctaSection}`}>
-        <div className={styles.container}>
-          <ScrollReveal>
-            <div className={styles.ctaContent}>
-              <h2 className={styles.ctaTitle}>Partner with Us for a Safer Tomorrow</h2>
-              <p className={styles.ctaSubtext}>
-                Explore collaboration opportunities in earthquake forecast research, IoT sensor deployment, and disaster preparedness.
-              </p>
-              <Link href="/contact" className={styles.primaryButton}>
-                Get in Touch
-              </Link>
-            </div>
-          </ScrollReveal>
-        </div>
-      </section>
+<section className={`${styles.section} ${styles.ctaSection}`}>
+  <div className={styles.container}>
+    <ScrollReveal>
+      <div className={styles.ctaContent}>
+        <h2 className={styles.ctaTitle}>Partner with Us for a Safer Tomorrow</h2>
+        <p className={styles.ctaSubtext}>
+          Explore collaboration opportunities in earthquake forecast research, IoT sensor deployment, and disaster preparedness.
+        </p>
+        <Link href="/contact" className={styles.primaryButton}>
+          Get in Touch
+        </Link>
+      </div>
+    </ScrollReveal>
+  </div>
+</section>
     </div>
   );
 }

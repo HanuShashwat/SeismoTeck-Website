@@ -1,28 +1,31 @@
 :root {
   /* === Colors === */
-  --color-bg-primary: #0a0e17;
-  --color-bg-secondary: #111827;
-  --color-bg-card: #1a1f2e;
-  --color-bg-card-hover: #222842;
-  --color-surface: #0f1923;
-  --color-border: #1e293b;
-  --color-border-glow: rgba(0, 229, 255, 0.3);
+  --bg-primary-rgb: 156, 167, 184;
+  --accent-primary-rgb: 29, 78, 216;
 
-  --color-text-primary: #f1f5f9;
-  --color-text-secondary: #94a3b8;
-  --color-text-muted: #64748b;
+  --color-bg-primary: #8d95a1;
+  --color-bg-secondary: #647287;
+  --color-bg-card: #1e293b;
+  --color-bg-card-hover: #334155;
+  --color-surface: #0f172a;
+  --color-border: #475569;
+  --color-border-glow: rgba(var(--accent-primary-rgb), 0.3);
 
-  --color-accent-primary: #00e5ff;     /* Cyan / teal glow */
-  --color-accent-secondary: #00bcd4;
+  --color-text-primary: #ffffff;
+  --color-text-secondary: #e2e8f0;
+  --color-text-muted: #d3d7db;
+
+  --color-accent-primary: #173da6;     /* Deep blue accent */
+  --color-accent-secondary: #2563eb;
   --color-accent-warm: #f59e0b;        /* Amber for warnings/highlights */
   --color-accent-danger: #ef4444;      /* Red for seismic alerts */
   --color-accent-success: #10b981;     /* Green for verified forecasts */
 
-  --gradient-hero: linear-gradient(135deg, #0a0e17 0%, #0f2027 50%, #0a0e17 100%);
-  --gradient-card: linear-gradient(145deg, #1a1f2e, #111827);
-  --gradient-accent: linear-gradient(90deg, #00e5ff, #00bcd4);
-  --glow-cyan: 0 0 20px rgba(0, 229, 255, 0.15);
-  --glow-cyan-strong: 0 0 40px rgba(0, 229, 255, 0.25);
+  --gradient-hero: linear-gradient(105deg, #9ca7b8 0%, #64748b 50%);
+  --gradient-card: linear-gradient(145deg, #1e293b, #0f172a);
+  --gradient-accent: linear-gradient(90deg, #1d4ed8, #3b82f6);
+  --glow-cyan: 0 0 20px rgba(var(--accent-primary-rgb), 0.15);
+  --glow-cyan-strong: 0 0 40px rgba(var(--accent-primary-rgb), 0.4);
 
   /* === Typography === */
   /* We define fallbacks, actual fonts are loaded via next/font in layout.tsx */
