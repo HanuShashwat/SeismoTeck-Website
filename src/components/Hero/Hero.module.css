@@ -22,8 +22,7 @@
 .overlay {
   position: absolute;
   inset: 0;
-  background: var(--gradient-hero);
-  opacity: 0.85;
+  background: var(--hero-overlay);
 }
 
 .content {
@@ -88,27 +87,25 @@
 }
 
 .btnPrimary {
-  background: var(--gradient-accent);
-  color: #ffffff;
+  background: var(--color-btn-bg);
+  color: var(--color-btn-text);
   border: none;
-  box-shadow: 0 4px 15px rgba(var(--accent-primary-rgb), 0.3);
 }
 
 .btnPrimary:hover {
   transform: scale(1.05) translateY(-3px);
-  box-shadow: var(--glow-cyan-strong);
 }
 
 .btnSecondary {
   background-color: transparent;
-  color: var(--color-accent-primary);
-  border: 2px solid var(--color-accent-primary);
+  color: var(--color-text-primary);
+  border: 2px solid var(--color-border);
 }
 
 .btnSecondary:hover {
-  background-color: var(--color-accent-primary);
-  color: #ffffff;
-  box-shadow: var(--glow-cyan);
+  background-color: var(--color-btn-bg);
+  color: var(--color-btn-text);
+  border-color: var(--color-btn-bg);
   transform: translateY(-3px);
 }
 

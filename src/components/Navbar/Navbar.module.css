@@ -61,6 +61,12 @@
   color: var(--color-accent-primary);
 }
 
+.controls {
+  display: flex;
+  align-items: center;
+  gap: var(--space-sm);
+}
+
 .mobileToggle {
   display: none;
   flex-direction: column;

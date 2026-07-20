@@ -24,21 +24,21 @@
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  gap: 12px;
+  text-align: center;
+  gap: var(--space-xs);
   padding: var(--space-xl) var(--space-md);
   
-  /* Initial Animation State */
-  opacity: 0;
-  transform: translateY(30px);
+  /* Upgraded cinematic glass card style */
+  background: var(--color-bg-card); 
+  backdrop-filter: blur(10px);
   transition: opacity 0.6s cubic-bezier(0.2, 0.8, 0.2, 1), 
               transform 0.6s cubic-bezier(0.2, 0.8, 0.2, 1),
               box-shadow 0.3s ease, border-color 0.3s ease;
   
   /* Glass UI Setup */
-  background: rgba(15, 23, 42, 0.4); 
   backdrop-filter: blur(12px);
   -webkit-backdrop-filter: blur(12px);
-  border: 1px solid rgba(255, 255, 255, 0.05);
+  border: 1px solid var(--color-border);
   border-radius: var(--border-radius-lg);
   box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15);
   position: relative;

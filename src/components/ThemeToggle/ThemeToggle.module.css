@@ -1,0 +1,16 @@
+.toggleBtn {
+  background: transparent;
+  border: none;
+  cursor: pointer;
+  color: var(--color-text-primary);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 8px;
+  border-radius: 50%;
+  transition: background-color var(--transition-fast), color var(--transition-fast);
+}
+
+.toggleBtn:hover {
+  background-color: var(--color-bg-card-hover);
+}
