@@ -32,7 +32,7 @@
 }
 
 .menuBtn {
-  background: rgba(var(--bg-primary-rgb), 0.1);
+  background: var(--color-surface);
   border: 1px solid transparent;
   color: var(--color-text-secondary);
   padding: 14px 20px;
@@ -47,16 +47,16 @@
 }
 
 .menuBtn:hover, .activeBtn {
-  color: #ffffff;
-  background: var(--color-accent-primary);
-  border-color: rgba(255,255,255,0.1);
+  color: var(--color-surface-text);
+  background: var(--color-surface);
+  border-color: var(--color-border);
   box-shadow: var(--glow-cyan);
   transform: translateX(5px);
 }
 
 .contentStage {
-  background: rgba(0, 0, 0, 0.15); /* Darker inset look */
-  border: 1px solid rgba(255,255,255, 0.05);
+  background: var(--color-surface); /* Darker inset look */
+  border: 1px solid var(--color-border);
   border-radius: var(--border-radius-lg);
   padding: var(--space-xl);
   height: 550px;
@@ -116,7 +116,7 @@
 }
 
 .iotCard {
-  background: rgba(255, 255, 255, 0.03);
+  background: var(--color-bg-card);
   border: 1px solid var(--color-border);
   padding: var(--space-lg) var(--space-md);
   border-radius: var(--border-radius-md);
@@ -169,7 +169,7 @@
 
 .satelliteTable th {
   color: var(--color-text-primary);
-  background: rgba(0,0,0,0.2);
+  background: var(--color-bg-card);
 }
 
 /* Blueprint */
@@ -210,7 +210,7 @@
 }
 
 .mechanicsList li {
-  background: rgba(255,255,255,0.03);
+  background: var(--color-bg-card);
   padding: 16px;
   border-radius: var(--border-radius-sm);
   color: var(--color-text-secondary);
@@ -267,7 +267,7 @@
 
 .inputGroup input, .inputGroup select, .inputGroup textarea {
   width: 100%;
-  background: rgba(0,0,0,0.2);
+  background: var(--color-surface);
   border: 1px solid var(--color-border);
   padding: 14px;
   color: var(--color-text-primary);
@@ -280,12 +280,12 @@
 .inputGroup input:focus, .inputGroup select:focus, .inputGroup textarea:focus {
   outline: none;
   border-color: var(--color-accent-primary);
-  background: rgba(0,0,0,0.4);
+  background: var(--color-surface);
 }
 
 .submitBtn {
-  background: var(--color-accent-primary);
-  color: #ffffff;
+  background: var(--color-btn-bg);
+  color: var(--color-btn-text);
   border: none;
   padding: 16px;
   border-radius: var(--border-radius-sm);
@@ -308,74 +308,142 @@
 
 @media (max-width: 900px) {
   .portalCard {
-    padding: var(--space-lg); /* Less empty space around the card */
+    padding: var(--space-md); /* Tighter padding for mobile */
+    border-radius: var(--border-radius-lg);
+    background: var(--color-bg-primary); /* Less heavy background on mobile */
+    border: none; /* Cleaner look */
   }
 
   .portalBody { 
     display: flex;
-    flex-direction: column; /* Stack menu above content */
+    flex-direction: column;
     gap: var(--space-md); 
   }
 
-  /* Transform vertical menu into a horizontal swipeable tab bar */
+  /* Sleek iOS-style horizontal scrollable tab bar */
   .taskMenu { 
     display: flex;
     flex-direction: row; 
     overflow-x: auto;
     overflow-y: hidden;
-    padding-bottom: 12px;
+    padding-bottom: 8px;
+    gap: 12px;
     scroll-snap-type: x mandatory;
     -webkit-overflow-scrolling: touch;
     scrollbar-width: none; /* Firefox */
+    border-bottom: 1px solid var(--color-border);
+    margin-bottom: var(--space-xs);
   }
   
   .taskMenu::-webkit-scrollbar {
-    display: none; /* Hide scrollbar for clean App look */
+    display: none;
   }
 
   .menuBtn {
-    flex: 0 0 auto; /* Prevent tabs from squishing */
+    flex: 0 0 auto;
     scroll-snap-align: start;
-    padding: 10px 18px;
-    font-size: 0.85rem;
-    border-radius: 30px; /* Pill shape is better for mobile tabs */
+    padding: 10px 20px;
+    font-size: 0.9rem;
+    border-radius: 50px; /* Pill shape */
     text-align: center;
     border: 1px solid var(--color-border);
+    background: var(--color-surface);
+    color: var(--color-text-secondary);
+    transition: all 0.2s ease;
   }
 
-  .menuBtn:hover, .activeBtn {
-    transform: none; /* Remove desktop slide effect */
+  .menuBtn:hover {
+    transform: none; /* No hover animations on mobile */
   }
 
-  /* Let content flow naturally on mobile, remove double-scrollbar trap */
+  /* Clearly distinct active state */
+  .activeBtn, .menuBtn.activeBtn {
+    background: var(--color-btn-bg);
+    color: var(--color-btn-text);
+    border-color: var(--color-btn-bg);
+    font-weight: 700;
+  }
+
+  /* Mobile Content Stage */
   .contentStage { 
     height: auto; 
-    min-height: 400px;
+    min-height: auto;
     padding: var(--space-md); 
     overflow: visible;
+    border-radius: var(--border-radius-md);
+    background: transparent;
+    border: none;
+  }
+
+  .panelTitle {
+    font-size: 1.25rem;
+    border-bottom: none;
+    margin-bottom: var(--space-sm);
+    padding-bottom: 0;
+  }
+
+  .panelDesc {
+    font-size: 0.9rem;
+    margin-bottom: var(--space-md);
+  }
+
+  /* IoT Cards Mobile Layout */
+  .iotGrid {
+    grid-template-columns: 1fr; /* Stack cleanly */
+    gap: 12px;
+  }
+
+  .iotCard {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 16px;
+    text-align: left;
+    border-radius: var(--border-radius-sm);
+  }
+
+  .iotCard h4 {
+    margin-bottom: 0;
+  }
+
+  .statusWrapper {
+    margin: 0;
+  }
+
+  /* Timeline Mobile Adjustments */
+  .timelineStep {
+    flex-direction: column;
+    gap: 8px;
+  }
+
+  .stepNum {
+    align-self: flex-start;
+  }
+
+  /* Quote Form */
+  .quoteForm { 
+    grid-template-columns: 1fr; 
+    gap: 12px;
+  }
+
+  .submitBtn {
+    padding: 14px;
+    font-size: 0.9rem;
   }
 }
 
 @media (max-width: 600px) {
   .portalCard { 
-    padding: var(--space-md); 
-    border-radius: var(--border-radius-lg);
+    padding: var(--space-sm); 
   }
   
-  .panelTitle {
-    font-size: 1.15rem; /* Smaller, neater headings */
-    gap: 8px;
-  }
-  
-  .panelDesc {
-    font-size: 0.85rem;
-  }
-
-  .quoteForm { 
-    grid-template-columns: 1fr; /* Stack form inputs */
+  .contentStage {
+    padding: var(--space-sm) 0; /* Maximize screen real estate */
   }
 
   .iotCard {
-    padding: 16px;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 8px;
   }
 }

@@ -205,8 +205,8 @@
 }
 
 .primaryButton {
-  background: var(--gradient-accent);
-  color: #ffffff;
+  background: var(--color-btn-bg);
+  color: var(--color-btn-text);
   border: none;
   border-radius: 50px;
   padding: var(--space-sm) var(--space-lg);

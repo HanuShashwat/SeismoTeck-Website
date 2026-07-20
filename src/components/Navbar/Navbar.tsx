@@ -4,6 +4,7 @@ import { useState } from "react";
 import Link from "next/link";
 import Image from "next/image";
 import { NAV_LINKS, COMPANY_INFO } from "../../utils/constants";
+import ThemeToggle from "../ThemeToggle/ThemeToggle";
 import styles from "./Navbar.module.css";
 
 export default function Navbar() {
@@ -46,15 +47,18 @@ export default function Navbar() {
           ))}
         </div>
 
-        <button 
-          className={`${styles.mobileToggle} ${isOpen ? styles.active : ""}`} 
-          onClick={toggleMenu}
-          aria-label="Toggle navigation"
-        >
-          <span className={styles.bar}></span>
-          <span className={styles.bar}></span>
-          <span className={styles.bar}></span>
-        </button>
+        <div className={styles.controls}>
+          <ThemeToggle />
+          <button 
+            className={`${styles.mobileToggle} ${isOpen ? styles.active : ""}`} 
+            onClick={toggleMenu}
+            aria-label="Toggle navigation"
+          >
+            <span className={styles.bar}></span>
+            <span className={styles.bar}></span>
+            <span className={styles.bar}></span>
+          </button>
+        </div>
       </div>
     </nav>
   );

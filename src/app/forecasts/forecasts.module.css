@@ -95,7 +95,7 @@
   display: flex;
   flex-direction: column;
   gap: 12px;
-  background: rgba(15, 23, 42, 0.4); /* Deep cinematic background */
+  background: var(--color-bg-card);
   backdrop-filter: blur(10px);
   -webkit-backdrop-filter: blur(10px);
   padding: var(--space-lg);

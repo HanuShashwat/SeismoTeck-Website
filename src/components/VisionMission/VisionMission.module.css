@@ -134,8 +134,8 @@
 }
 
 .btnPremium {
-  background: var(--gradient-accent);
-  color: #ffffff;
+  background: var(--color-btn-bg);
+  color: var(--color-btn-text);
   padding: var(--space-md) var(--space-xl);
   border-radius: 50px;
   font-weight: 700;
@@ -143,14 +143,12 @@
   letter-spacing: 2px;
   border: none;
   cursor: pointer;
-  box-shadow: 0 5px 15px rgba(var(--accent-primary-rgb), 0.1);
   transition: all 0.3s ease;
   font-family: var(--font-body);
 }
 
 .btnPremium:hover {
   transform: scale(1.05) translateY(-3px);
-  box-shadow: var(--glow-cyan-strong);
 }
 
 .btnOutline {

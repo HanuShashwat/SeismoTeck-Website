@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import { Inter, Outfit } from "next/font/google";
 import Navbar from "@/components/Navbar/Navbar";
 import Footer from "@/components/Footer/Footer";
+import { ThemeProvider } from "@/components/ThemeProvider/ThemeProvider";
 import "./globals.css";
 
 const inter = Inter({
@@ -46,11 +47,32 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en" className={`${inter.variable} ${outfit.variable}`}>
+    <html lang="en" className={`${inter.variable} ${outfit.variable}`} suppressHydrationWarning>
+      <head>
+        <script
+          dangerouslySetInnerHTML={{
+            __html: `
+              (function() {
+                try {
+                  var savedTheme = localStorage.getItem('seismoteck-theme');
+                  if (savedTheme) {
+                    document.documentElement.setAttribute('data-theme', savedTheme);
+                  } else {
+                    var prefersLight = window.matchMedia('(prefers-color-scheme: light)').matches;
+                    document.documentElement.setAttribute('data-theme', prefersLight ? 'light' : 'dark');
+                  }
+                } catch (e) {}
+              })();
+            `,
+          }}
+        />
+      </head>
       <body>
-        <Navbar />
-        <main>{children}</main>
-        <Footer />
+        <ThemeProvider>
+          <Navbar />
+          <main>{children}</main>
+          <Footer />
+        </ThemeProvider>
       </body>
     </html>
   );

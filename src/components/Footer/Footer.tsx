@@ -1,6 +1,7 @@
 import Link from "next/link";
 import Image from "next/image";
 import { NAV_LINKS, COMPANY_INFO } from "../../utils/constants";
+import ThemeToggle from "../ThemeToggle/ThemeToggle";
 import styles from "./Footer.module.css";
 
 export default function Footer() {
@@ -61,10 +62,15 @@ export default function Footer() {
         </div>
 
         <div className={styles.bottomBar}>
-          <p>&copy; {currentYear} {COMPANY_INFO.name}. All rights reserved.</p>
-          <p className={styles.disclaimer}>
-            The forecasts and claims presented on this website are based on the independent research of SeismoTeck and are not verified by official government seismology departments unless explicitly stated.
-          </p>
+          <div>
+            <p>&copy; {currentYear} {COMPANY_INFO.name}. All rights reserved.</p>
+            <p className={styles.disclaimer}>
+              The forecasts and claims presented on this website are based on the independent research of SeismoTeck and are not verified by official government seismology departments unless explicitly stated.
+            </p>
+          </div>
+          <div className={styles.themeToggleWrapper}>
+            <ThemeToggle />
+          </div>
         </div>
       </div>
     </footer>

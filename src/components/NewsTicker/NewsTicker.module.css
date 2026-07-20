@@ -9,7 +9,7 @@
    ========================================= */
 .desktopTicker {
   display: flex;
-  background: rgba(15, 23, 42, 0.8);
+  background: var(--color-bg-card);
   backdrop-filter: blur(10px);
   -webkit-backdrop-filter: blur(10px);
   border-bottom: 1px solid var(--color-border);
@@ -128,7 +128,7 @@
   .mobileCard {
     display: flex;
     flex-direction: column;
-    background: var(--gradient-card);
+    background: var(--color-bg-card);
     border-bottom: 1px solid var(--color-border);
     padding: var(--space-sm) var(--space-md);
     min-height: 90px; /* Prevents layout shift when text length changes */
